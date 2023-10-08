@@ -35,7 +35,9 @@ class UserRegisterPage extends GetView<UserRegisterController> {
                 ),
                 const SizedBox(height: 20),
                 JBButton(
-                    onTap: () => controller.create(), caption: "Cadastrar"),
+                  onTap: () => controller.create(),
+                  caption: "Cadastrar",
+                ),
               ],
             ),
           ),

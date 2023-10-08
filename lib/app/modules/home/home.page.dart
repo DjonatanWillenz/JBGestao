@@ -2,12 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile/app/global/constants/constants.dart';
 import 'package:mobile/app/modules/home/components/cards.dart';
+import 'package:mobile/app/modules/home/components/drawer.dart';
 import 'package:mobile/app/modules/home/components/notifications.dart';
-import 'package:mobile/app/modules/home/components/scaffold.dart';
 import 'package:mobile/app/modules/home/components/viewers.dart';
 import 'package:mobile/app/modules/home/home.controller.dart';
 import 'package:mobile/app/global/constants/responsive.dart';
-import 'package:mobile/app/modules/home/widgets/line_chart_card.dart';
 
 class HomePage extends GetView<HomeController> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
@@ -17,8 +16,10 @@ class HomePage extends GetView<HomeController> {
 
   @override
   Widget build(BuildContext context) {
-    return DxScaffold(
-      scaffoldKey: _scaffoldKey,
+    return Scaffold(
+      appBar: AppBar(),
+      drawer: JBDrawer(scaffoldKey: _scaffoldKey),
+      key: _scaffoldKey,
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -34,7 +35,6 @@ class HomePage extends GetView<HomeController> {
                           children: [
                             AnalyticCards(controller: controller),
                             const SizedBox(height: appPadding),
-                            LineChartCard(),
                             if (Responsive.isMobile(context))
                               const SizedBox(height: appPadding),
                             if (Responsive.isMobile(context))
