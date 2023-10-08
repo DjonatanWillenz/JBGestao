@@ -7,8 +7,19 @@ class UserRepository {
   final UserApiClient? apiClient = UserApiClient();
 
   Future<UserSession?> auth(String email, String password) async {
-    var user = await apiClient?.auth(email, password);
-    return user != null ? UserSession.fromJson(user) : null;
+    if (email.toLowerCase() == 'djonatanhorus@gmail.com' &&
+        password == 'djonatan2011') {
+      UserSession user = UserSession();
+      user.setId('1');
+      user.setEmail("DjonatanHorus@gmail.com");
+      user.setName("Djonatan Willenz");
+      return user;
+    }
+
+    return null;
+
+    // var user = await apiClient?.auth(email, password);
+    // return user != null ? UserSession.fromJson(user) : null;
   }
 
   Future<UserSession?> create(UserSession user) async {

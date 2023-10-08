@@ -10,7 +10,7 @@ class UserRegisterPage extends GetView<UserRegisterController> {
 
   @override
   Widget build(BuildContext context) {
-    return DwScaffoldCrud(
+    return JBScaffoldCrud(
       title: "Cadastrar usuário",
       body: Form(
         key: controller.formKey,
@@ -20,21 +20,22 @@ class UserRegisterPage extends GetView<UserRegisterController> {
             child: Column(
               children: [
                 const SizedBox(height: 65),
-                DwTextFormField(
+                JBTextFormField(
                     label: "Nome completo:", controll: controller.name),
-                DwTextFormField(label: "E-mail:", controll: controller.email),
-                DwTextFormField(
+                JBTextFormField(label: "E-mail:", controll: controller.email),
+                JBTextFormField(
                     label: "Senha:",
                     controll: controller.password,
                     isPassword: true),
-                DwTextFormField(
+                JBTextFormField(
                   label: "Confirmar senha:",
                   controll: controller.confirmPassword,
                   isPassword: true,
                   funValidarCampo: controller.validarCampoConfirmarSenha,
                 ),
                 const SizedBox(height: 20),
-                DButton(onTap: () => controller.create(), caption: "Cadastrar"),
+                JBButton(
+                    onTap: () => controller.create(), caption: "Cadastrar"),
               ],
             ),
           ),

@@ -3,14 +3,14 @@ import 'package:get/get.dart';
 import 'package:mobile/app/global/components/icon.button.dart';
 import 'package:mobile/app/global/components/text.dart';
 
-class DwListTile extends StatefulWidget {
+class JBListTile extends StatefulWidget {
   final String? title;
   final String? leading;
   final String? subtitle;
   final Function? onDelete;
   final bool? visualizado;
 
-  const DwListTile({
+  const JBListTile({
     super.key,
     this.title,
     this.leading,
@@ -20,10 +20,10 @@ class DwListTile extends StatefulWidget {
   });
 
   @override
-  _DwListTileState createState() => _DwListTileState();
+  _JBListTileState createState() => _JBListTileState();
 }
 
-class _DwListTileState extends State<DwListTile> {
+class _JBListTileState extends State<JBListTile> {
   updateList() {
     setState(() {
       Navigator.of(context).pop();

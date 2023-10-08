@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/app/global/components/scaffold.dart';
 
-class DwScaffoldCrud extends StatelessWidget {
+class JBScaffoldCrud extends StatelessWidget {
   final String? title;
   final GlobalKey? chave;
   final Widget? body;
   final Widget? floatingActionButton;
 
-  const DwScaffoldCrud({
+  const JBScaffoldCrud({
     super.key,
     this.title,
     this.chave,

@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 
-class DButton extends StatelessWidget {
+class JBButton extends StatelessWidget {
   final String? caption;
   final Function()? onTap;
 
-  const DButton({
+  const JBButton({
     super.key,
     required this.onTap,
     required this.caption,

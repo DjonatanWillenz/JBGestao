@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-class DwTextFormField extends StatelessWidget {
+class JBTextFormField extends StatelessWidget {
   final String? label;
   final IconData? icon;
   final bool? isPassword;
@@ -12,7 +12,7 @@ class DwTextFormField extends StatelessWidget {
   final bool? isNotMinLength;
   final Function? onTap;
 
-  const DwTextFormField({
+  const JBTextFormField({
     super.key,
     this.label,
     this.icon,

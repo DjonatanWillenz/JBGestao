@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
-class DwTextClick extends StatelessWidget {
+class JBTextClick extends StatelessWidget {
   final String? lbl;
   final double? fontSize;
   final Color? cor;
   final Function? fun;
 
-  const DwTextClick({super.key, this.lbl, this.fontSize, this.cor, this.fun});
+  const JBTextClick({super.key, this.lbl, this.fontSize, this.cor, this.fun});
 
   @override
   Widget build(BuildContext context) {
