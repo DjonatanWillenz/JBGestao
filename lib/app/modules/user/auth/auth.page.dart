@@ -57,7 +57,7 @@ class AuthPage extends GetView<AuthController> {
                   ),
                 ),
                 const SizedBox(height: 50),
-                DButton(
+                JBButton(
                   onTap: () => controller.validate(),
                   caption: "Acessar",
                 ),
