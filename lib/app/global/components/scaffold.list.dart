@@ -20,7 +20,7 @@ class JBScaffoldList extends StatelessWidget {
     return JBScaffold(
       key: chave,
       title: title,
-      body: Center(child: body),
+      body: Container(child: body),
       floatingActionButton: floatingActionButton,
     );
   }
