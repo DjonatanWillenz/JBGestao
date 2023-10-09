@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class DrawerListTile extends StatelessWidget {
+class JBDrawerListTile extends StatelessWidget {
   final String? title, svgSrc;
   final Function? press;
 
-  const DrawerListTile({super.key, this.title, this.svgSrc, this.press});
+  const JBDrawerListTile({super.key, this.title, this.svgSrc, this.press});
 
   @override
   Widget build(BuildContext context) {

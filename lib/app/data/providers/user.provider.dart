@@ -22,20 +22,15 @@ class UserApiClient extends DwGetConnect {
         return response.body;
       } else {
         final j = jsonDecode(response.body);
-        print(j['msg'].toString());
         throw Exception(j["msg"]);
       }
-    } catch (e) {
-      print(e);
-    }
+    } catch (e) {}
   }
 
   logout() async {
     try {
       final response = await send('$baseUrl/logout', "");
       return response.statusCode == 201 ? response.body : null;
-    } catch (e) {
-      print(e);
-    }
+    } catch (e) {}
   }
 }

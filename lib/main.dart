@@ -13,9 +13,9 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: 'JB Gestão mobile',
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color.fromRGBO(119, 201, 235, 0),
+        //scaffoldBackgroundColor: const Color.fromARGB(0, 87, 196, 223),
         drawerTheme: const DrawerThemeData(
-          backgroundColor: Color.fromARGB(255, 69, 69, 207),
+          backgroundColor: Color.fromARGB(255, 88, 104, 226),
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color.fromARGB(255, 59, 71, 180),

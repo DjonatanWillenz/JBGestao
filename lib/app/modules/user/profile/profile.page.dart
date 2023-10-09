@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile/app/modules/home/components/drawer.dart';
+import 'package:mobile/app/global/components/drawer.dart';
 import 'package:mobile/app/modules/user/profile/profile.controller.dart';
 
 class ProfilePage extends GetView<ProfileController> {

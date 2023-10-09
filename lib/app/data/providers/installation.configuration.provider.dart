@@ -18,7 +18,6 @@ class InstallationConfigurationApiClient extends DwGetConnect {
     try {
       final response = await putD(
           '$baseUrlApp/api/installation/configuration/$key', vo.toJson());
-      print(response);
     } catch (e) {
       return null;
     }

@@ -9,6 +9,8 @@ import 'package:mobile/app/modules/user/profile/profile.binding.dart';
 import 'package:mobile/app/modules/user/profile/profile.page.dart';
 import 'package:mobile/app/modules/user/register/user.binding.dart';
 import 'package:mobile/app/modules/user/register/user.page.dart';
+import 'package:mobile/app/modules/workers/workers.binding.dart';
+import 'package:mobile/app/modules/workers/workers.page.dart';
 import 'package:mobile/app/routes/app_pages.dart';
 
 class AppPages {
@@ -36,6 +38,11 @@ class AppPages {
       name: AppRoutes.createUser,
       page: () => const UserRegisterPage(),
       binding: UserRegisterBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.workers,
+      page: () => const WorkersPage(),
+      binding: WorkersBinding(),
     )
   ];
 }

@@ -9,7 +9,6 @@ class NotificationApiClient extends DwGetConnect {
       final response = await getD('$baseUrlApp/api/notification/user/$iduser');
       return response.statusCode == 200 ? response.body as List : null;
     } catch (e) {
-      print(e);
       return null;
     }
   }
@@ -20,7 +19,6 @@ class NotificationApiClient extends DwGetConnect {
           await post('$baseUrlApp/api/notification', entity.toJson());
       return response.statusCode == 201 ? response.body : null;
     } catch (e) {
-      print(e);
       return null;
     }
   }
