@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
-import 'package:mobile/app/modules/home/home.binding.dart';
-import 'package:mobile/app/modules/home/home.page.dart';
+import 'package:mobile/app/modules/Form09601/Form09601.binding.dart';
+import 'package:mobile/app/modules/Form09601/Form09601.page.dart';
 import 'package:mobile/app/modules/initial/init.binding.dart';
 import 'package:mobile/app/modules/initial/init.page.dart';
 import 'package:mobile/app/modules/user/auth/auth.binding.dart';
@@ -9,8 +9,8 @@ import 'package:mobile/app/modules/user/profile/profile.binding.dart';
 import 'package:mobile/app/modules/user/profile/profile.page.dart';
 import 'package:mobile/app/modules/user/register/user.binding.dart';
 import 'package:mobile/app/modules/user/register/user.page.dart';
-import 'package:mobile/app/modules/workers/workers.binding.dart';
-import 'package:mobile/app/modules/workers/workers.page.dart';
+import 'package:mobile/app/modules/form09602/form09602.binding.dart';
+import 'package:mobile/app/modules/form09602/form09602.page.dart';
 import 'package:mobile/app/routes/app_pages.dart';
 
 class AppPages {
@@ -31,8 +31,8 @@ class AppPages {
         binding: ProfileBinding()),
     GetPage(
       name: AppRoutes.home,
-      page: () => HomePage(),
-      binding: HomeBinding(),
+      page: () => Form09601Page(),
+      binding: Form09601Binding(),
     ),
     GetPage(
       name: AppRoutes.createUser,
@@ -41,8 +41,8 @@ class AppPages {
     ),
     GetPage(
       name: AppRoutes.workers,
-      page: () => const WorkersPage(),
-      binding: WorkersBinding(),
+      page: () => const Form09602Page(),
+      binding: Form09602Binding(),
     )
   ];
 }

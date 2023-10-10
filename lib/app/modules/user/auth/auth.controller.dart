@@ -10,7 +10,7 @@ class AuthController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
+  TextEditingController senha = TextEditingController();
 
   @override
   void onInit() {
@@ -20,16 +20,16 @@ class AuthController extends GetxController {
   @override
   void onClose() {
     email.dispose();
-    password.dispose();
+    senha.dispose();
     super.onClose();
   }
 
   validate() {
-    if ((email.text != '') && (password.text != '')) {
-      repositoty.auth(email.text, password.text).then((value) {
+    if ((email.text != '') && (senha.text != '')) {
+      repositoty.auth(email.text, senha.text).then((value) {
         if (value != null) {
           System.getInstance().setUser(value);
-          _saveDataAuthMemory(value, password.text);
+          _saveDataAuthMemory(value, senha.text);
           Get.offAndToNamed(AppRoutes.home);
         } else {
           Get.snackbar('Erro:',

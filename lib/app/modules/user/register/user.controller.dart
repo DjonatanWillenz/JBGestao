@@ -9,20 +9,20 @@ import 'package:mobile/app/routes/app_pages.dart';
 class UserRegisterController extends GetxController {
   final repositoty = Get.find<UserRepository>();
 
-  TextEditingController name = TextEditingController();
+  TextEditingController nome = TextEditingController();
   TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
-  TextEditingController confirmPassword = TextEditingController();
+  TextEditingController senha = TextEditingController();
+  TextEditingController confirmarSenha = TextEditingController();
 
   final formKey = GlobalKey<FormState>();
 
   create() async {
     if (formKey.currentState!.validate()) {
-      if (password.text == confirmPassword.text) {
+      if (senha.text == confirmarSenha.text) {
         UserSession user = UserSession();
-        user.setName(name.text);
+        user.setNome(nome.text);
         user.setEmail(email.text);
-        user.setPassword(password.text);
+        user.setSenha(senha.text);
 
         try {
           UserSession? newUsuario = await repositoty.create(user);
@@ -43,7 +43,7 @@ class UserRegisterController extends GetxController {
   }
 
   validarCampoConfirmarSenha() {
-    if (password.text != confirmPassword.text) {
+    if (senha.text != confirmarSenha.text) {
       return "As senha não correspondem!";
     }
   }

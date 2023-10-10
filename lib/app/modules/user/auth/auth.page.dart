@@ -37,7 +37,7 @@ class AuthPage extends GetView<AuthController> {
 
                 // password textfield
                 JBTextField(
-                  controller: controller.password,
+                  controller: controller.senha,
                   hintText: 'Senha de acesso',
                   obscureText: true,
                 ),

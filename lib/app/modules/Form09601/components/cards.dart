@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile/app/global/constants/constants.dart';
 import 'package:mobile/app/global/constants/responsive.dart';
-import 'package:mobile/app/modules/home/home.controller.dart';
+import 'package:mobile/app/modules/Form09601/Form09601.controller.dart';
 import 'package:mobile/app/routes/app_pages.dart';
 
 class JBCardItem {
@@ -22,7 +22,7 @@ class JBCardItem {
 }
 
 class JBDashboardCard extends StatefulWidget {
-  final HomeController controller;
+  final Form09601Controller controller;
 
   const JBDashboardCard({Key? key, required this.controller}) : super(key: key);
 
@@ -51,7 +51,7 @@ class _JBDashboardCardState extends State<JBDashboardCard> {
 
 // ignore: must_be_immutable
 class JBGridViewCards extends StatelessWidget {
-  HomeController controller;
+  Form09601Controller controller;
   List<JBCardItem> itens = [];
   JBGridViewCards({
     Key? key,
@@ -61,8 +61,8 @@ class JBGridViewCards extends StatelessWidget {
   }) : super(key: key) {
     itens.add(
       JBCardItem(
-        title: "Trabalhadores",
-        value: controller.temperature,
+        title: "Recibos pagamento",
+        value: controller.recibos,
         icon: Icons.device_thermostat_sharp,
         color: primaryColor,
         router: AppRoutes.workers,
@@ -71,8 +71,8 @@ class JBGridViewCards extends StatelessWidget {
 
     itens.add(
       JBCardItem(
-        title: "Férias",
-        value: controller.ph,
+        title: "Informe rendimentos",
+        value: controller.informes,
         icon: Icons.cloud_circle_outlined,
         color: purple,
       ),
@@ -80,16 +80,17 @@ class JBGridViewCards extends StatelessWidget {
 
     itens.add(
       JBCardItem(
-        title: "Contratos",
-        value: controller.alert,
+        title: "Férias",
+        value: controller.ferias,
         icon: Icons.warning_amber_rounded,
         color: orange,
       ),
     );
 
-    itens.add(JBCardItem(
+    itens.add(
+      JBCardItem(
       title: "Ponto",
-      value: controller.pendency,
+      value: RxString('0'),
       icon: Icons.pending_actions_sharp,
       color: green,
     ));
@@ -148,40 +149,56 @@ class JBGridViewCards extends StatelessWidget {
                     ),
                   ),
                 ),
-                
-                Row(
+                Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    Text(
-                      "0 ",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: textColor,
-                        fontSize: Responsive.isDesktop(context) ? 18 : 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Text(
-                      " 0",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: textColor,
-                        fontSize: Responsive.isDesktop(context) ? 18 : 18,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    Text(
-                      " 0",
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                        color: textColor,
-                        fontSize: Responsive.isDesktop(context) ? 18 : 18,
-                        fontWeight: FontWeight.w600,
-                      ),
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      mainAxisAlignment: MainAxisAlignment.end,
+                      children: [
+                        Text(
+                          "0 ",
+
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.green,
+                            fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          " 0",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.orange,
+                            fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          " 0",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                        Text(
+                          " 0",
+                          maxLines: 1,
+                          overflow: TextOverflow.ellipsis,
+                          style: TextStyle(
+                            color: Colors.red,
+                            fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ],
                     ),
                   ],
                 ),

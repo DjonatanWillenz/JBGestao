@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile/app/data/models/workers.model.dart';
+import 'package:mobile/app/data/models/recibo.pagamento.model.dart';
 import 'package:mobile/app/global/components/scaffold.list.dart';
 import 'package:mobile/app/global/components/text.dart';
-import 'package:mobile/app/modules/workers/workers.controller.dart';
+import 'package:mobile/app/modules/form09602/form09602.controller.dart';
 
-class WorkersPage extends GetView<WorkersController> {
-  const WorkersPage({super.key});
+class Form09602Page extends GetView<Form09602Controller> {
+  const Form09602Page({super.key});
 
   @override
   Widget build(BuildContext context) {
     return JBScaffoldList(
       title: "Trabalhadores",
-      body: FutureBuilder<List<WorkerVO>>(
+      body: FutureBuilder<List<ReciboPagamentoVO>>(
         future: controller.findAllWorkers(),
-        builder: (BuildContext cx, AsyncSnapshot<List<WorkerVO>> snapshot) {
+        builder: (BuildContext cx, AsyncSnapshot<List<ReciboPagamentoVO>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
@@ -31,8 +31,9 @@ class WorkersPage extends GetView<WorkersController> {
                 itemBuilder: (context, index) {
                   if (lista.isNotEmpty) {
                     return ListTile(
-                      title: Text(lista[index].getName().toString()),
-                      subtitle: Text(lista[index].getCpf().toString()),
+                      
+                      title: Text(lista[index].competencia.toString()),
+                      subtitle: Text(lista[index].valorLiquido.toString()),
 
                       // leading: Text(lista[index].getKey().toString()),
                     );

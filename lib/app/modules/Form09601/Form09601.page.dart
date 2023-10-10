@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:mobile/app/global/components/text.dart';
-import 'package:mobile/app/modules/home/components/cards.dart';
+import 'package:mobile/app/modules/Form09601/components/cards.dart';
 import 'package:mobile/app/global/components/drawer.dart';
-import 'package:mobile/app/modules/home/home.controller.dart';
+import 'package:mobile/app/modules/Form09601/Form09601.controller.dart';
 
-class HomePage extends GetView<HomeController> {
+class Form09601Page extends GetView<Form09601Controller> {
   final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey();
-  HomePage({super.key}) {
+  Form09601Page({super.key}) {
     controller.onInit();
   }
 
