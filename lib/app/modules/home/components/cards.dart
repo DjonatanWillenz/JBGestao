@@ -110,10 +110,9 @@ class JBGridViewCards extends StatelessWidget {
           crossAxisCount: 1,
           crossAxisSpacing: appPadding,
           mainAxisSpacing: appPadding,
-          childAspectRatio: childAspectRatio,
+          childAspectRatio: childAspectRatio * 2,
         ),
         itemBuilder: (context, index) => Container(
-          height: 100,
           padding: const EdgeInsets.symmetric(
             horizontal: appPadding,
             vertical: appPadding / 2,
@@ -124,36 +123,18 @@ class JBGridViewCards extends StatelessWidget {
           ),
           child: GestureDetector(
             onTap: () => Get.toNamed(itens[index].router.toString()),
-            child: Column(
+            child: Row(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Padding(
-                      padding: const EdgeInsets.only(left: 10),
-                      child: Obx(
-                        () => Text(
-                          itens[index].value.value,
-                          style: TextStyle(
-                            color: textColor,
-                            fontSize: Responsive.isDesktop(context) ? 35 : 30,
-                            fontWeight: FontWeight.w800,
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: 60,
-                      width: 60,
-                      child: Icon(
-                        itens[index].icon,
-                        size: 60,
-                        color: Colors.white.withOpacity(0.4),
-                      ),
-                    )
-                  ],
+                SizedBox(
+                  height: 60,
+                  width: 60,
+                  child: Icon(
+                    itens[index].icon,
+                    size: 60,
+                    color: Colors.white.withOpacity(0.4),
+                  ),
                 ),
                 Center(
                   child: Text(
@@ -166,7 +147,44 @@ class JBGridViewCards extends StatelessWidget {
                       fontWeight: FontWeight.w600,
                     ),
                   ),
-                )
+                ),
+                
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.end,
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(
+                      "0 ",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: textColor,
+                        fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      " 0",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: textColor,
+                        fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    Text(
+                      " 0",
+                      maxLines: 1,
+                      overflow: TextOverflow.ellipsis,
+                      style: TextStyle(
+                        color: textColor,
+                        fontSize: Responsive.isDesktop(context) ? 18 : 18,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                  ],
+                ),
               ],
             ),
           ),
