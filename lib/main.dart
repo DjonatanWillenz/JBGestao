@@ -15,7 +15,7 @@ void main() {
       theme: ThemeData(
         //scaffoldBackgroundColor: const Color.fromARGB(0, 87, 196, 223),
         drawerTheme: const DrawerThemeData(
-          backgroundColor: Color.fromARGB(255, 88, 104, 226),
+          backgroundColor: Color.fromARGB(255, 7, 96, 184),
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color.fromARGB(255, 59, 71, 180),
@@ -23,8 +23,11 @@ void main() {
         buttonTheme: const ButtonThemeData(
           buttonColor: Colors.green,
         ),
+        cardTheme: const CardTheme(
+          color: Colors.blue,
+        ),
       ),
-      initialRoute: AppRoutes.initial,
+      initialRoute: AppRoutes.carregamento,
       initialBinding: InitBinding(),
       //home: InitialPage(),
       getPages: AppPages.pages,

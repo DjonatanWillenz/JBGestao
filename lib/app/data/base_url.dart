@@ -1,2 +1,2 @@
-const baseUrlApp = 'http://localhost:3000';
+const baseUrlApp = 'http://teste.jbsoft.com.br/api';
 const baseUrlHttps = 'app-server-piscicultura.herokuapp.com';

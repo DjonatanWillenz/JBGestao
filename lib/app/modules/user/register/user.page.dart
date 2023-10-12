@@ -21,15 +21,15 @@ class UserRegisterPage extends GetView<UserRegisterController> {
               children: [
                 const SizedBox(height: 65),
                 JBTextFormField(
-                    label: "Nome completo:", controll: controller.name),
+                    label: "Nome completo:", controll: controller.nome),
                 JBTextFormField(label: "E-mail:", controll: controller.email),
                 JBTextFormField(
                     label: "Senha:",
-                    controll: controller.password,
+                    controll: controller.senha,
                     isPassword: true),
                 JBTextFormField(
                   label: "Confirmar senha:",
-                  controll: controller.confirmPassword,
+                  controll: controller.confirmarSenha,
                   isPassword: true,
                   funValidarCampo: controller.validarCampoConfirmarSenha,
                 ),

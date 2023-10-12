@@ -5,11 +5,11 @@ class DwGetConnect extends GetConnect {
   final String _contentType = 'application/json';
 
   _addAuthHeader() {
-    if (System.getInstance().getToken() != null) {
+    if (AppSession.getInstancia().getToken() != null) {
       return {
         'Content-type': 'application/json',
         'Accept': 'application/json',
-        'Authorization': 'Bearer ${System.getInstance().getToken()}'
+        'Authorization': 'Bearer ${AppSession.getInstancia().getToken()}'
       };
     }
     return {

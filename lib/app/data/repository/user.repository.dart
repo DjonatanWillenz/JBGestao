@@ -1,34 +1,25 @@
-import 'package:mobile/app/data/models/user.model.dart';
-import 'package:mobile/app/data/providers/user.provider.dart';
-import 'package:crypto/crypto.dart';
-import 'dart:convert';
+import 'package:mobile/app/data/models/usuario.model.dart';
+import 'package:mobile/app/data/providers/usuario.provider.dart';
 
 class UserRepository {
-  final UserApiClient? apiClient = UserApiClient();
+  final UsuarioApiClient? apiClient = UsuarioApiClient();
 
-  Future<UserSession?> auth(String email, String password) async {
-    if (email.toLowerCase() == 'djonatanhorus@gmail.com' &&
-        password == 'djonatan2011') {
-      UserSession user = UserSession();
-      user.setId('1');
-      user.setEmail("DjonatanHorus@gmail.com");
-      user.setName("Djonatan Willenz");
-      return user;
-    }
+  Future<Usuario?> auth(String email, String senha) async {
+    Usuario usuario = Usuario();
+    usuario.setId(1);
+    usuario.setNome("Djonatan Willenz");
+    usuario.setEmail("DjonatanWillenz@Jbsoft.com.br");
+    usuario.setSenha("");
 
-    return null;
+    return usuario;
 
-    // var user = await apiClient?.auth(email, password);
-    // return user != null ? UserSession.fromJson(user) : null;
+    // var user = await apiClient?.auth(email, senha);
+    // return user != null ? Usuario.fromJson(user) : null;
   }
 
-  Future<UserSession?> create(UserSession user) async {
+  Future<Usuario?> create(Usuario user) async {
     var result = await apiClient?.create(user);
-    return result != null ? UserSession.fromJson(result) : null;
-  }
-
-  String textToMd5(String text) {
-    return md5.convert(utf8.encode(text)).toString();
+    return result != null ? Usuario.fromJson(result) : null;
   }
 
   logout() async {

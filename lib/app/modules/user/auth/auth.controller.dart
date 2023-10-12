@@ -10,27 +10,22 @@ class AuthController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController email = TextEditingController();
-  TextEditingController password = TextEditingController();
-
-  @override
-  void onInit() {
-    super.onInit();
-  }
+  TextEditingController senha = TextEditingController();
 
   @override
   void onClose() {
     email.dispose();
-    password.dispose();
+    senha.dispose();
     super.onClose();
   }
 
   validate() {
-    if ((email.text != '') && (password.text != '')) {
-      repositoty.auth(email.text, password.text).then((value) {
+    if ((email.text != '') && (senha.text != '')) {
+      repositoty.auth(email.text, senha.text).then((value) {
         if (value != null) {
-          System.getInstance().setUser(value);
-          _saveDataAuthMemory(value, password.text);
-          Get.offAndToNamed(AppRoutes.home);
+          AppSession.getInstancia().setUsuario(value);
+          _saveDataAuthMemory(value, senha.text);
+          Get.offAndToNamed(AppRoutes.paginaInicial);
         } else {
           Get.snackbar('Erro:',
               'Email ou senha incorreto(s), verifique e tente novamente');
