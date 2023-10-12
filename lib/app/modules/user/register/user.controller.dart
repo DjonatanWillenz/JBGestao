@@ -39,7 +39,7 @@ class UserRegisterController extends GetxController {
   _realizarLoginAposConcluirCadastro(Usuario usuario) {
     Get.snackbar('Sucesso!!', 'Seu cadastro foi realizado com sucesso!!');
     AppSession.getInstancia().setUsuario(usuario);
-    Get.offAndToNamed(AppRoutes.home);
+    Get.offAndToNamed(AppRoutes.paginaInicial);
   }
 
   validarCampoConfirmarSenha() {

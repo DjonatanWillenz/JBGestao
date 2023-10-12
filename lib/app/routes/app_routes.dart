@@ -5,8 +5,10 @@ import 'package:mobile/app/modules/form09603/form09603.binding.dart';
 import 'package:mobile/app/modules/form09603/form09603.page.dart';
 import 'package:mobile/app/modules/form09604/form09604.binding.dart';
 import 'package:mobile/app/modules/form09604/form09604.page.dart';
-import 'package:mobile/app/modules/form09605/form09604.page.dart';
 import 'package:mobile/app/modules/form09605/form09605.binding.dart';
+import 'package:mobile/app/modules/form09605/form09605.page.dart';
+import 'package:mobile/app/modules/form09606/form09606.binding.dart';
+import 'package:mobile/app/modules/form09606/form09606.page.dart';
 import 'package:mobile/app/modules/initial/init.binding.dart';
 import 'package:mobile/app/modules/initial/init.page.dart';
 import 'package:mobile/app/modules/user/auth/auth.binding.dart';
@@ -22,26 +24,26 @@ import 'package:mobile/app/routes/app_pages.dart';
 class AppPages {
   static final List<GetPage> pages = [
     GetPage(
-      name: AppRoutes.initial,
+      name: AppRoutes.carregamento,
       page: () => InitPage(),
       binding: InitBinding(),
     ),
     GetPage(
-      name: AppRoutes.auth,
+      name: AppRoutes.login,
       page: () => const AuthPage(),
       binding: AuthBinding(),
     ),
     GetPage(
-        name: AppRoutes.profile,
+        name: AppRoutes.perfil,
         page: () => ProfilePage(),
         binding: ProfileBinding()),
     GetPage(
-      name: AppRoutes.home,
+      name: AppRoutes.paginaInicial,
       page: () => Form09601Page(),
       binding: Form09601Binding(),
     ),
     GetPage(
-      name: AppRoutes.createUser,
+      name: AppRoutes.cadatroUsuario,
       page: () => const UserRegisterPage(),
       binding: UserRegisterBinding(),
     ),
@@ -64,6 +66,11 @@ class AppPages {
       name: AppRoutes.ponto,
       page: () => const Form09605Page(),
       binding: Form09605Binding(),
+    ),
+    GetPage(
+      name: AppRoutes.agendamentos,
+      page: () => const Form09606Page(),
+      binding: Form09606Binding(),
     )
   ];
 }

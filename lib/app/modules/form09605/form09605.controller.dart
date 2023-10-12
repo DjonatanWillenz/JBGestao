@@ -7,7 +7,7 @@ class Form09605Controller extends GetxController {
 
     response.add(
       Ponto(
-        data: 30,
+        data: DateTime.now(),
         horaEntrada: "08:00",
         horaSaida: "11:50",
       ),
@@ -15,7 +15,7 @@ class Form09605Controller extends GetxController {
 
     response.add(
       Ponto(
-        data: 30,
+        data: DateTime.now(),
         horaEntrada: "08:00",
         horaSaida: "11:50",
       ),
@@ -23,7 +23,7 @@ class Form09605Controller extends GetxController {
 
     response.add(
       Ponto(
-        data: 30,
+        data: DateTime.now(),
         horaEntrada: "08:00",
         horaSaida: "11:50",
       ),
@@ -31,7 +31,7 @@ class Form09605Controller extends GetxController {
 
     response.add(
       Ponto(
-        data: 30,
+        data: DateTime.now(),
         horaEntrada: "08:00",
         horaSaida: "11:50",
       ),

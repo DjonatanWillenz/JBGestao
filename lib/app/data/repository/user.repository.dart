@@ -6,6 +6,7 @@ class UserRepository {
 
   Future<Usuario?> auth(String email, String senha) async {
     Usuario usuario = Usuario();
+    usuario.setId(1);
     usuario.setNome("Djonatan Willenz");
     usuario.setEmail("DjonatanWillenz@Jbsoft.com.br");
     usuario.setSenha("");

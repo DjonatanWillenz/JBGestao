@@ -25,7 +25,7 @@ class AuthController extends GetxController {
         if (value != null) {
           AppSession.getInstancia().setUsuario(value);
           _saveDataAuthMemory(value, senha.text);
-          Get.offAndToNamed(AppRoutes.home);
+          Get.offAndToNamed(AppRoutes.paginaInicial);
         } else {
           Get.snackbar('Erro:',
               'Email ou senha incorreto(s), verifique e tente novamente');

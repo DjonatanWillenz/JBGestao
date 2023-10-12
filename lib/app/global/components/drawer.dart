@@ -26,27 +26,27 @@ class _MenuState extends State<JBDrawer> {
     MenuModel(
       icon: 'assets/icons/Dashboard.svg',
       title: "Inicio",
-      router: AppRoutes.initial,
+      router: AppRoutes.paginaInicial,
     ),
     MenuModel(
       icon: 'assets/icons/profile.svg',
       title: "Perfil",
-      router: AppRoutes.profile,
+      router: AppRoutes.perfil,
     ),
     MenuModel(
       icon: 'assets/icons/setting.svg',
       title: "Configurações",
-      router: AppRoutes.settings,
+      router: AppRoutes.configuracoes,
     ),
     MenuModel(
       icon: 'assets/icons/history.svg',
       title: "Agendamentos",
-      router: "",
+      router: AppRoutes.agendamentos,
     ),
     MenuModel(
       icon: 'assets/icons/signout.svg',
       title: "Sair",
-      router: AppRoutes.auth,
+      router: AppRoutes.login,
     ),
   ];
 
@@ -66,7 +66,7 @@ class _MenuState extends State<JBDrawer> {
                   currentAccountPicture:
                       const Icon(Icons.account_circle, size: 80),
                   accountName: Text(
-                    AppSession.getInstancia().getUsuario().getName(),
+                    AppSession.getInstancia().getUsuario().getNome(),
                     style: const TextStyle(fontSize: 17, color: Colors.white),
                   ),
                   accountEmail: Text(

@@ -18,7 +18,7 @@ class InitController extends GetxController {
       AppSession.getInstancia()
           .setUsuario(await userRepository?.auth(email!, senha!));
       if (AppSession.getInstancia().getUsuario() != null) {
-        Get.offAndToNamed(AppRoutes.home);
+        Get.offAndToNamed(AppRoutes.paginaInicial);
       }
     }
   }

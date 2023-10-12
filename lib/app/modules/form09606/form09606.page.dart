@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile/app/data/models/ponto.model.dart';
+import 'package:mobile/app/data/models/agendamento.model.dart';
 import 'package:mobile/app/global/components/scaffold.list.dart';
 import 'package:mobile/app/global/components/text.dart';
-import 'package:mobile/app/modules/form09605/form09605.controller.dart';
+import 'package:mobile/app/modules/form09606/form09606.controller.dart';
 
-class Form09605Page extends GetView<Form09605Controller> {
-  const Form09605Page({super.key});
+class Form09606Page extends GetView<Form09606Controller> {
+  const Form09606Page({super.key});
 
   @override
   Widget build(BuildContext context) {
     return JBScaffoldList(
-      title: "Informes de rendimentos",
-      body: FutureBuilder<List<Ponto>>(
-        future: controller.buscarListaPonto(),
-        builder: (BuildContext cx, AsyncSnapshot<List<Ponto>> snapshot) {
+      title: "Ponto",
+      body: FutureBuilder<List<Agendamento>>(
+        future: controller.buscarListaAgendamentos(),
+        builder: (BuildContext cx, AsyncSnapshot<List<Agendamento>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
@@ -31,13 +31,8 @@ class Form09605Page extends GetView<Form09605Controller> {
                 itemBuilder: (context, index) {
                   if (lista.isNotEmpty) {
                     return ListTile(
-                      title: Text(lista[index].getData().toString()),
-                      subtitle: Text(
-                        lista[index].getHoraEntrada().toString() +
-                            " - " +
-                            lista[index].getHoraSaida().toString(),
-                      ),
-
+                      title: Text(lista[index].getTitulo().toString()),
+                      subtitle: Text(lista[index].getDescricao().toString()),
                       // leading: Text(lista[index].getKey().toString()),
                     );
                   } else {

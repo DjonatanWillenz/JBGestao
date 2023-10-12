@@ -24,7 +24,7 @@ void main() {
           buttonColor: Colors.green,
         ),
       ),
-      initialRoute: AppRoutes.initial,
+      initialRoute: AppRoutes.carregamento,
       initialBinding: InitBinding(),
       //home: InitialPage(),
       getPages: AppPages.pages,

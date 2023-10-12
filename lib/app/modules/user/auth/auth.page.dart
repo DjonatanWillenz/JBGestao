@@ -71,7 +71,7 @@ class AuthPage extends GetView<AuthController> {
                     ),
                     const SizedBox(width: 4),
                     GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.createUser),
+                      onTap: () => Get.toNamed(AppRoutes.cadatroUsuario),
                       child: const Text(
                         'Registrar-se',
                         style: TextStyle(
