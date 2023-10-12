@@ -23,6 +23,9 @@ void main() {
         buttonTheme: const ButtonThemeData(
           buttonColor: Colors.green,
         ),
+        cardTheme: const CardTheme(
+          color: Colors.blue,
+        ),
       ),
       initialRoute: AppRoutes.carregamento,
       initialBinding: InitBinding(),

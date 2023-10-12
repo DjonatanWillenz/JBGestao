@@ -1,4 +1,6 @@
 import 'package:get/get.dart';
+import 'package:mobile/app/modules/form09600/Form09600.binding.dart';
+import 'package:mobile/app/modules/form09600/Form09600.page.dart';
 import 'package:mobile/app/modules/form09601/Form09601.binding.dart';
 import 'package:mobile/app/modules/form09601/Form09601.page.dart';
 import 'package:mobile/app/modules/form09603/form09603.binding.dart';
@@ -34,9 +36,15 @@ class AppPages {
       binding: AuthBinding(),
     ),
     GetPage(
-        name: AppRoutes.perfil,
-        page: () => ProfilePage(),
-        binding: ProfileBinding()),
+      name: AppRoutes.perfil,
+      page: () => ProfilePage(),
+      binding: ProfileBinding(),
+    ),
+    GetPage(
+      name: AppRoutes.configuracoes,
+      page: () => Form09600Page(),
+      binding: Form09600Binding(),
+    ),
     GetPage(
       name: AppRoutes.paginaInicial,
       page: () => Form09601Page(),

@@ -11,7 +11,7 @@ class Form09606Page extends GetView<Form09606Controller> {
   @override
   Widget build(BuildContext context) {
     return JBScaffoldList(
-      title: "Ponto",
+      title: "Agendamentos",
       body: FutureBuilder<List<Agendamento>>(
         future: controller.buscarListaAgendamentos(),
         builder: (BuildContext cx, AsyncSnapshot<List<Agendamento>> snapshot) {
