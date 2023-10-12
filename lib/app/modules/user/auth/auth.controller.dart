@@ -13,11 +13,6 @@ class AuthController extends GetxController {
   TextEditingController senha = TextEditingController();
 
   @override
-  void onInit() {
-    super.onInit();
-  }
-
-  @override
   void onClose() {
     email.dispose();
     senha.dispose();

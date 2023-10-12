@@ -1,6 +1,12 @@
 import 'package:get/get.dart';
-import 'package:mobile/app/modules/Form09601/Form09601.binding.dart';
-import 'package:mobile/app/modules/Form09601/Form09601.page.dart';
+import 'package:mobile/app/modules/form09601/Form09601.binding.dart';
+import 'package:mobile/app/modules/form09601/Form09601.page.dart';
+import 'package:mobile/app/modules/form09603/form09603.binding.dart';
+import 'package:mobile/app/modules/form09603/form09603.page.dart';
+import 'package:mobile/app/modules/form09604/form09604.binding.dart';
+import 'package:mobile/app/modules/form09604/form09604.page.dart';
+import 'package:mobile/app/modules/form09605/form09604.page.dart';
+import 'package:mobile/app/modules/form09605/form09605.binding.dart';
 import 'package:mobile/app/modules/initial/init.binding.dart';
 import 'package:mobile/app/modules/initial/init.page.dart';
 import 'package:mobile/app/modules/user/auth/auth.binding.dart';
@@ -40,9 +46,24 @@ class AppPages {
       binding: UserRegisterBinding(),
     ),
     GetPage(
-      name: AppRoutes.workers,
+      name: AppRoutes.recibos,
       page: () => const Form09602Page(),
       binding: Form09602Binding(),
+    ),
+    GetPage(
+      name: AppRoutes.informes,
+      page: () => const Form09603Page(),
+      binding: Form09603Binding(),
+    ),
+    GetPage(
+      name: AppRoutes.ferias,
+      page: () => const Form09604Page(),
+      binding: Form09604Binding(),
+    ),
+    GetPage(
+      name: AppRoutes.ponto,
+      page: () => const Form09605Page(),
+      binding: Form09605Binding(),
     )
   ];
 }

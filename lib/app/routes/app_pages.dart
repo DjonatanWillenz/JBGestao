@@ -5,7 +5,10 @@ class AppRoutes {
   static get createUser => "/create-user";
   static get settings => "/settings";
   static get profile => "/profile";
-  static get workers => "/workers";
+  static get recibos => "/recibos";
+  static get informes => "/informes";
+  static get ferias => "/ferias";
+  static get ponto => "/ponto";
 
   static get auth => "/auth";
 }

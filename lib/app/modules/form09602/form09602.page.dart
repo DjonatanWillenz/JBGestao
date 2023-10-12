@@ -11,10 +11,11 @@ class Form09602Page extends GetView<Form09602Controller> {
   @override
   Widget build(BuildContext context) {
     return JBScaffoldList(
-      title: "Trabalhadores",
+      title: "Recibos de pagamento",
       body: FutureBuilder<List<ReciboPagamentoVO>>(
         future: controller.findAllWorkers(),
-        builder: (BuildContext cx, AsyncSnapshot<List<ReciboPagamentoVO>> snapshot) {
+        builder:
+            (BuildContext cx, AsyncSnapshot<List<ReciboPagamentoVO>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
@@ -31,7 +32,6 @@ class Form09602Page extends GetView<Form09602Controller> {
                 itemBuilder: (context, index) {
                   if (lista.isNotEmpty) {
                     return ListTile(
-                      
                       title: Text(lista[index].competencia.toString()),
                       subtitle: Text(lista[index].valorLiquido.toString()),
 
