@@ -1,17 +1,17 @@
-import 'package:mobile/app/data/models/user.model.dart';
-import 'package:mobile/app/data/providers/user.provider.dart';
+import 'package:mobile/app/data/models/usuario.model.dart';
+import 'package:mobile/app/data/providers/usuario.provider.dart';
 
 class UserRepository {
-  final UserApiClient? apiClient = UserApiClient();
+  final UsuarioApiClient? apiClient = UsuarioApiClient();
 
-  Future<UserSession?> auth(String email, String senha) async {
-     var user = await apiClient?.auth(email, senha);
-     return user != null ? UserSession.fromJson(user) : null;
+  Future<Usuario?> auth(String email, String senha) async {
+    var user = await apiClient?.auth(email, senha);
+    return user != null ? Usuario.fromJson(user) : null;
   }
 
-  Future<UserSession?> create(UserSession user) async {
+  Future<Usuario?> create(Usuario user) async {
     var result = await apiClient?.create(user);
-    return result != null ? UserSession.fromJson(result) : null;
+    return result != null ? Usuario.fromJson(result) : null;
   }
 
   logout() async {

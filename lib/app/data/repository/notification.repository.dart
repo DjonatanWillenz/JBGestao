@@ -7,8 +7,8 @@ class NotificationRepository {
 
   Future<List<Notifications>> find() async {
     List<Notifications>? notifications = <Notifications>[];
-    List<dynamic> req =
-        await apiClient.getByIdUser(System.getInstance().getUser().getId());
+    List<dynamic> req = await apiClient
+        .getByIdUser(AppSession.getInstancia().getUsuario().getId());
     if (req.isNotEmpty) {
       for (var v in req) {
         if (v is Map<String, dynamic>) {
@@ -20,6 +20,6 @@ class NotificationRepository {
   }
 
   read(String id) async {
-    await apiClient.read(System.getInstance().getUser().getId(), id);
+    await apiClient.read(AppSession.getInstancia().getUsuario().getId(), id);
   }
 }

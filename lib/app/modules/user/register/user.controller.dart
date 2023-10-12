@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:mobile/app/data/models/user.model.dart';
+import 'package:mobile/app/data/models/usuario.model.dart';
 import 'package:mobile/app/data/repository/user.repository.dart';
 import 'package:mobile/app/global/singleton/system.dart';
 import 'package:mobile/app/routes/app_pages.dart';
@@ -19,13 +19,13 @@ class UserRegisterController extends GetxController {
   create() async {
     if (formKey.currentState!.validate()) {
       if (senha.text == confirmarSenha.text) {
-        UserSession user = UserSession();
-        user.setNome(nome.text);
-        user.setEmail(email.text);
-        user.setSenha(senha.text);
+        Usuario usuario = Usuario();
+        usuario.setNome(nome.text);
+        usuario.setEmail(email.text);
+        usuario.setSenha(senha.text);
 
         try {
-          UserSession? newUsuario = await repositoty.create(user);
+          Usuario? newUsuario = await repositoty.create(usuario);
           _realizarLoginAposConcluirCadastro(newUsuario!);
         } catch (e) {
           Get.snackbar("Erro:", e.toString());
@@ -36,9 +36,9 @@ class UserRegisterController extends GetxController {
     }
   }
 
-  _realizarLoginAposConcluirCadastro(UserSession user) {
+  _realizarLoginAposConcluirCadastro(Usuario usuario) {
     Get.snackbar('Sucesso!!', 'Seu cadastro foi realizado com sucesso!!');
-    System.getInstance().setUser(user);
+    AppSession.getInstancia().setUsuario(usuario);
     Get.offAndToNamed(AppRoutes.home);
   }
 

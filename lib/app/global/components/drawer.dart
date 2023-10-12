@@ -66,11 +66,11 @@ class _MenuState extends State<JBDrawer> {
                   currentAccountPicture:
                       const Icon(Icons.account_circle, size: 80),
                   accountName: Text(
-                    System.getInstance().getUser().getName(),                  
+                    AppSession.getInstancia().getUsuario().getName(),
                     style: const TextStyle(fontSize: 17, color: Colors.white),
                   ),
                   accountEmail: Text(
-                    System.getInstance().getUser().getEmail(),
+                    AppSession.getInstancia().getUsuario().getEmail(),
                     style: const TextStyle(fontSize: 14, color: Colors.white),
                   ),
                   decoration: BoxDecoration(

@@ -28,7 +28,7 @@ class AuthController extends GetxController {
     if ((email.text != '') && (senha.text != '')) {
       repositoty.auth(email.text, senha.text).then((value) {
         if (value != null) {
-          System.getInstance().setUser(value);
+          AppSession.getInstancia().setUsuario(value);
           _saveDataAuthMemory(value, senha.text);
           Get.offAndToNamed(AppRoutes.home);
         } else {
