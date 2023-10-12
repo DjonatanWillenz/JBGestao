@@ -28,42 +28,45 @@ class Form09601Page extends GetView<Form09601Controller> {
     List<JBCardItem> cards = getCards();
     return Scaffold(
       appBar: AppBar(
-        title: const JBText(lbl: "JB Gestão"),
+        title: const JBText(text: "JB Gestão"),
       ),
       drawer: JBDrawer(scaffoldKey: _scaffoldKey),
       key: _scaffoldKey,
       body: ListView.builder(
         itemCount: cards.length,
-        itemBuilder: (ctx, i) => Card(
-          margin: EdgeInsetsGeometry.lerp(
-              const EdgeInsets.all(2), const EdgeInsets.all(2.3), 10),
-          child: Row(
-            children: [
-              Row(
-                children: [
-                  SizedBox(
-                    height: 60,
-                    width: 60,
-                    child: Icon(
-                      cards[i].icon,
-                      size: 60,
-                      color: Colors.white.withOpacity(0.4),
-                    ),
-                  ),
-                  Center(
-                    child: Text(
-                      cards[i].title!,
-                      maxLines: 1,
-                      overflow: TextOverflow.ellipsis,
-                      style: const TextStyle(
-                        fontSize: 18,
-                        fontWeight: FontWeight.w600,
+        itemBuilder: (ctx, i) => GestureDetector(
+          onTap: () => Get.toNamed(cards[i].router!),
+          child: Card(
+            margin: EdgeInsetsGeometry.lerp(
+                const EdgeInsets.all(2), const EdgeInsets.all(2.3), 10),
+            child: Row(
+              children: [
+                Row(
+                  children: [
+                    SizedBox(
+                      height: 60,
+                      width: 60,
+                      child: Icon(
+                        cards[i].icon,
+                        size: 60,
+                        color: Colors.white.withOpacity(0.4),
                       ),
                     ),
-                  ),
-                ],
-              )
-            ],
+                    Center(
+                      child: Text(
+                        cards[i].title!,
+                        maxLines: 1,
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w600,
+                        ),
+                      ),
+                    ),
+                  ],
+                )
+              ],
+            ),
           ),
         ),
       ),

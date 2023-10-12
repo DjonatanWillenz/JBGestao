@@ -8,7 +8,7 @@ class JBAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       key: key,
-      title: const JBText(lbl: "JB Gestão"),
+      title: const JBText(text: "JB Gestão"),
     );
   }
 }

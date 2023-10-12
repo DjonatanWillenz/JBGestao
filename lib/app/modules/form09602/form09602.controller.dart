@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:mobile/app/global/components/list.title.dart';
 
 class Form09602Controller extends GetxController {
-  Future<List<ListTile>> buscarListaRecibosPagamento() async {
-    List<ListTile> response = [];
+  Future<List<JBListTile>> buscarListaRecibosPagamento() async {
+    List<JBListTile> response = [];
 
     response.add(
-      const ListTile(
-        title: Text("01/2020"),
-        subtitle: Text('06/02/2020'),
+      const JBListTile(
+        title: "01/2020",
+        subtitle: '06/02/2020',
       ),
     );
 

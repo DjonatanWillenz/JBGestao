@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mobile/app/global/components/list.title.dart';
 import 'package:mobile/app/global/components/scaffold.dart';
 import 'package:mobile/app/global/components/text.dart';
 
@@ -19,10 +20,10 @@ class JBScaffoldList extends StatelessWidget {
     return JBScaffold(
       key: chave,
       title: title,
-      body: FutureBuilder<List<ListTile>>(
+      body: FutureBuilder<List<JBListTile>>(
         future: onPesquisa!(),
         builder:
-            (BuildContext context, AsyncSnapshot<List<ListTile>> snapshot) {
+            (BuildContext context, AsyncSnapshot<List<JBListTile>> snapshot) {
           if (snapshot.connectionState == ConnectionState.waiting) {
             return const Center(
               child: CircularProgressIndicator(),
@@ -43,17 +44,17 @@ class JBScaffoldList extends StatelessWidget {
                   } else {
                     return const Center(
                       child: JBText(
-                        lbl: 'Não encontramos registros',
+                        text: 'Não encontramos registros',
                       ),
                     );
                   }
                 },
               );
             } else {
-              return const JBText(lbl: "Não encontramos registros");
+              return const JBText(text: "Não encontramos registros");
             }
           } else {
-            return const JBText(lbl: "Não encontramos registros");
+            return const JBText(text: "Não encontramos registros");
           }
         },
       ),

@@ -14,7 +14,7 @@ class Form09600Page extends GetView<Form09601Controller> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const JBText(lbl: "Configurações"),
+        title: const JBText(text: "Configurações"),
       ),
       drawer: JBDrawer(scaffoldKey: _scaffoldKey),
       key: _scaffoldKey,

@@ -53,11 +53,11 @@ class _JBListTileState extends State<JBListTile> {
                 TextButton.icon(
                     onPressed: updateList(),
                     icon: const Icon(Icons.delete_forever_outlined),
-                    label: const JBText(lbl: 'Confirmar')),
+                    label: const JBText(text: 'Confirmar')),
                 TextButton.icon(
                   onPressed: () => Navigator.of(context).pop(),
                   icon: const Icon(Icons.exit_to_app_rounded),
-                  label: const JBText(lbl: 'Cancelar'),
+                  label: const JBText(text: 'Cancelar'),
                 )
               ],
             ),

@@ -43,7 +43,7 @@ class JBListTileConfirmm extends StatelessWidget {
                   TextButton.icon(
                     onPressed: updateList(),
                     icon: const Icon(Icons.coronavirus_rounded),
-                    label: const JBText(lbl: 'Confirmar'),
+                    label: const JBText(text: 'Confirmar'),
                   ),
                 ],
               ),

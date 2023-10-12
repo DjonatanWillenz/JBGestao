@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 
 class JBText extends StatelessWidget {
-  final String? lbl;
+  final String? text;
   final double? fontSize;
   final Color? cor;
   final FontStyle? fontStyle;
 
-  const JBText({super.key, this.lbl, this.fontSize, this.cor, this.fontStyle});
+  const JBText({super.key, this.text, this.fontSize, this.cor, this.fontStyle});
 
   @override
   Widget build(BuildContext context) {
@@ -14,7 +14,7 @@ class JBText extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.only(right: 0),
         child: Text(
-          lbl!,
+          text!,
           style: TextStyle(
             fontSize: fontSize,
             fontWeight: FontWeight.bold,

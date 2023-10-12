@@ -20,7 +20,7 @@ class JBScaffold extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: ThemeData().appBarTheme.backgroundColor,
-        title: JBText(lbl: '${title ?? ''}        '),
+        title: JBText(text: '${title ?? ''}        '),
         key: chave,
       ),
       body: body,
