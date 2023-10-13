@@ -4,9 +4,8 @@ class JBText extends StatelessWidget {
   final String? text;
   final double? fontSize;
   final Color? cor;
-  final FontStyle? fontStyle;
 
-  const JBText({super.key, this.text, this.fontSize, this.cor, this.fontStyle});
+  const JBText({super.key, this.text, this.fontSize, this.cor});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +18,6 @@ class JBText extends StatelessWidget {
             fontSize: fontSize,
             fontWeight: FontWeight.bold,
             color: cor,
-            fontStyle: fontStyle,
           ),
         ),
       ),
