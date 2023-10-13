@@ -7,8 +7,8 @@ class Form09602Controller extends GetxController {
 
     response.add(
       const JBListTile(
-        title: "01/2020",
-        subtitle: '06/02/2020',
+        title: "Tipo de folha: Normal",
+        subtitle: 'Competência: 02/2020, valor liquído: 1400,00',
       ),
     );
 
