@@ -12,6 +12,19 @@ class Form09602Controller extends GetxController {
       ),
     );
 
+    response.add(
+      const JBListTile(
+        title: "Tipo de folha: Normal",
+        subtitle: 'Competência: 02/2020, valor liquído: 1400,00',
+      ),
+    );
+
+    response.add(
+      const JBListTile(
+        title: "Tipo de folha: Normal",
+        subtitle: 'Competência: 02/2020, valor liquído: 1400,00',
+      ),
+    );
     return response;
   }
 }
