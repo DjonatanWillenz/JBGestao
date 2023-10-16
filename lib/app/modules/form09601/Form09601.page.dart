@@ -21,28 +21,46 @@ class Form09601Page extends GetView<Form09601Controller> {
       ),
       drawer: JBDrawer(scaffoldKey: _scaffoldKey),
       key: _scaffoldKey,
-      body: Column(
-        children: [
-          JBCard(
-            descricao: "Recibos pagamento",
-            icon: Icons.device_thermostat_sharp,
-            rota: AppRoutes.recibos,
+      body: SingleChildScrollView(
+        child: Container(
+          padding: const EdgeInsets.symmetric(horizontal: 30),
+          decoration: const BoxDecoration(
+              color: Colors.white,
+              borderRadius: BorderRadius.only(topLeft: Radius.circular(200))),
+          child: Column(
+            children: [
+              const SizedBox(height: 20),
+              GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                crossAxisSpacing: 40,
+                mainAxisSpacing: 30,
+                children: [
+                  JBCard(
+                    descricao: "Recibos",
+                    icon: Icons.device_thermostat_sharp,
+                    rota: AppRoutes.recibos,
+                  ),
+                  JBCard(
+                    descricao: "Informe",
+                    icon: Icons.cloud_circle_outlined,
+                    rota: AppRoutes.informes,
+                  ),
+                  JBCard(
+                      descricao: "Férias",
+                      icon: Icons.warning_amber_rounded,
+                      rota: AppRoutes.ferias),
+                  JBCard(
+                    descricao: "Ponto",
+                    icon: Icons.pending_actions_sharp,
+                    rota: AppRoutes.ponto,
+                  ),
+                ],
+              ),
+            ],
           ),
-          JBCard(
-            descricao: "Informe rendimentos",
-            icon: Icons.cloud_circle_outlined,
-            rota: AppRoutes.informes,
-          ),
-          JBCard(
-              descricao: "Férias",
-              icon: Icons.warning_amber_rounded,
-              rota: AppRoutes.ferias),
-          JBCard(
-            descricao: "Ponto",
-            icon: Icons.pending_actions_sharp,
-            rota: AppRoutes.ponto,
-          ),
-        ],
+        ),
       ),
     );
   }

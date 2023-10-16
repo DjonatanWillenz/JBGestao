@@ -5,16 +5,14 @@ class UserRepository {
   final UsuarioApiClient? apiClient = UsuarioApiClient();
 
   Future<Usuario?> auth(String email, String senha) async {
+    var user = await apiClient?.auth(email, senha);
+    //return user != null ? Usuario.fromJson(user) : null;
     Usuario usuario = Usuario();
     usuario.setId(1);
     usuario.setNome("Djonatan Willenz");
     usuario.setEmail("DjonatanWillenz@Jbsoft.com.br");
     usuario.setSenha("");
-
     return usuario;
-
-    // var user = await apiClient?.auth(email, senha);
-    // return user != null ? Usuario.fromJson(user) : null;
   }
 
   Future<Usuario?> create(Usuario user) async {
