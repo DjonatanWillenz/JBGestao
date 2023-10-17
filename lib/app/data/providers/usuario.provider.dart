@@ -8,7 +8,7 @@ class UsuarioApiClient extends DwGetConnect {
   auth(String email, String senha) async {
     try {
       final response = await post(
-          '$baseUrlApp/login', {"serie": 5000, "login": email, "senha": senha});
+          '$baseUrlApp/login', {"idempresa": 181801, "username": email, "password": senha});
       return response.statusCode == 200 ? response.body : null;
     } catch (e) {}
   }

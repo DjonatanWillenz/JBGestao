@@ -32,7 +32,7 @@ class JBCard extends StatelessWidget {
               child: Icon(
                 icon,
                 color: Colors.white,
-                size: 50,
+                size: 25,
               ),
             ),
             const SizedBox(height: 8),

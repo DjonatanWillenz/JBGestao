@@ -13,7 +13,7 @@ void main() {
       debugShowCheckedModeBanner: false,
       title: 'JB Gestão mobile',
       theme: ThemeData(
-        //scaffoldBackgroundColor: const Color.fromARGB(0, 87, 196, 223),
+        scaffoldBackgroundColor: Colors.blue[100],
         drawerTheme: const DrawerThemeData(
           backgroundColor: Color.fromARGB(255, 7, 96, 184),
         ),
