@@ -2,24 +2,28 @@ import 'dart:convert';
 
 import 'package:mobile/app/data/base_url.dart';
 import 'package:mobile/app/data/models/usuario.model.dart';
-import 'package:mobile/app/data/providers/connect.dart';
+import 'package:mobile/app/data/providers/http.dart';
 
-class UsuarioApiClient extends DwGetConnect {
+class UsuarioApiClient {
   auth(String email, String senha) async {
     try {
-      final response = await post(
-          '$baseUrlApp/login', {"idempresa": 181801, "username": email, "password": senha});
-      return response.statusCode == 200 ? response.body : null;
-    } catch (e) {}
+      final response = await JBHttp().getInstancia().post('$baseUrlApp/login',
+          {"idempresa": 181801, "username": email, "password": senha});
+      return response.statusCode == 200 ? response.data : null;
+    } catch (e) {
+      print(e);
+    }
   }
 
   create(Usuario user) async {
     try {
-      final response = await send('$baseUrlApp/auth/register', user.toJson());
+      final response = await JBHttp()
+          .getInstancia()
+          .post('$baseUrlApp/auth/register', user.toJson());
       if (response.statusCode == 201) {
-        return response.body;
+        return response.data;
       } else {
-        final j = jsonDecode(response.body);
+        final j = jsonDecode(response.data);
         throw Exception(j["msg"]);
       }
     } catch (e) {}
@@ -27,8 +31,10 @@ class UsuarioApiClient extends DwGetConnect {
 
   logout() async {
     try {
-      final response = await send('$baseUrlApp/logout', "");
-      return response.statusCode == 201 ? response.body : null;
+      final response = await JBHttp()
+          .getInstancia()
+          .post('$baseUrlApp/logout', Map<String, dynamic>());
+      return response.statusCode == 201 ? response.data : null;
     } catch (e) {}
   }
 }

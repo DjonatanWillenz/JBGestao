@@ -25,31 +25,37 @@ class Form09601Page extends GetView<Form09601Controller> {
         body: GridView.count(
           crossAxisCount: 2,
           children: [
-            JBCard(
-              descricao: "Recibos",
-              color: Colors.green,
-              rota: AppRoutes.recibos,
-              icon: Icons.access_alarms_outlined,
-            ),
-            JBCard(
-              descricao: "Informes",
-              color: Colors.green,
-              rota: AppRoutes.informes,
-              icon: Icons.access_alarms_outlined,
-            ),
-            JBCard(
-              descricao: "Ferias",
-              color: Colors.green,
-              rota: AppRoutes.ferias,
-              icon: Icons.access_alarms_outlined,
-            ),
-            JBCard(
-              descricao: "Ponto",
-              color: Colors.green,
-              rota: AppRoutes.ponto,
-              icon: Icons.access_alarms_outlined,
-            ),
+            ...cards()
           ],
         ));
+  }
+
+  List<JBCard> cards() {
+    return [
+      JBCard(
+        descricao: "Recibos",
+        color: Colors.green,
+        rota: AppRoutes.recibos,
+        icon: Icons.access_alarms_outlined,
+      ),
+      JBCard(
+        descricao: "Informes",
+        color: Colors.green,
+        rota: AppRoutes.informes,
+        icon: Icons.access_alarms_outlined,
+      ),
+      JBCard(
+        descricao: "Ferias",
+        color: Colors.green,
+        rota: AppRoutes.ferias,
+        icon: Icons.access_alarms_outlined,
+      ),
+      JBCard(
+        descricao: "Ponto",
+        color: Colors.green,
+        rota: AppRoutes.ponto,
+        icon: Icons.access_alarms_outlined,
+      ),
+    ];
   }
 }

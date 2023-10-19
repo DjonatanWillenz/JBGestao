@@ -1,13 +1,15 @@
 import 'package:mobile/app/data/models/notifications.model.dart';
-import 'package:mobile/app/data/providers/connect.dart';
+import 'package:mobile/app/data/providers/http.dart';
 
 import '../base_url.dart';
 
-class NotificationApiClient extends DwGetConnect {
+class NotificationApiClient {
   getByIdUser(String iduser) async {
     try {
-      final response = await getD('$baseUrlApp/api/notification/user/$iduser');
-      return response.statusCode == 200 ? response.body as List : null;
+      final response = await JBHttp()
+          .getInstancia()
+          .get('$baseUrlApp/api/notification/user/$iduser');
+      return response.statusCode == 200 ? response.data as List : null;
     } catch (e) {
       return null;
     }
@@ -15,19 +17,19 @@ class NotificationApiClient extends DwGetConnect {
 
   register(Notifications entity) async {
     try {
-      final response =
-          await post('$baseUrlApp/api/notification', entity.toJson());
-      return response.statusCode == 201 ? response.body : null;
+      // final response =
+      //     await JBHttp().getInstancia().post('$baseUrlApp/api/notification', entity.toJson());
+      return null; //response.statusCode == 201 ? response.body : null;
     } catch (e) {
       return null;
     }
   }
 
-  Future<bool> read(String iduser, String id) async {
+  read(String iduser, String id) async {
     try {
-      final response =
-          await putD('$baseUrlApp/api/notification/read/$iduser/$id', {});
-      return response.statusCode == 202;
+      //final response =
+      //    await putD('$baseUrlApp/api/notification/read/$iduser/$id', {});
+      return null; //response.statusCode == 202;
     } catch (e) {
       return false;
     }
