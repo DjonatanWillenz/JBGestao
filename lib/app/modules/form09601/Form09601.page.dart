@@ -16,45 +16,45 @@ class Form09601Page extends GetView<Form09601Controller> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.blue[50],
-        appBar: AppBar(
-          title: const JBText(text: "JB Gestão"),
-        ),
-        drawer: JBDrawer(scaffoldKey: _scaffoldKey),
-        key: _scaffoldKey,
-        body: GridView.count(
+      backgroundColor: Colors.blue[50],
+      appBar: AppBar(
+        title: const JBText(text: "JB Gestão"),
+      ),
+      drawer: JBDrawer(scaffoldKey: _scaffoldKey),
+      key: _scaffoldKey,
+      body: Padding(
+        padding: const EdgeInsets.all(20),
+        child: GridView.count(
+          crossAxisSpacing: 40,
+          mainAxisSpacing: 30,
           crossAxisCount: 2,
-          children: [
-            ...cards()
-          ],
-        ));
+          children: [...cards()],
+        ),
+      ),
+    );
   }
 
   List<JBCard> cards() {
     return [
       JBCard(
-        descricao: "Recibos",
         color: Colors.green,
         rota: AppRoutes.recibos,
-        icon: Icons.access_alarms_outlined,
+        icon: Icons.attach_money,
       ),
       JBCard(
-        descricao: "Informes",
         color: Colors.green,
         rota: AppRoutes.informes,
-        icon: Icons.access_alarms_outlined,
+        icon: Icons.add_card_rounded,
       ),
       JBCard(
-        descricao: "Ferias",
         color: Colors.green,
         rota: AppRoutes.ferias,
-        icon: Icons.access_alarms_outlined,
+        icon: Icons.free_cancellation_sharp,
       ),
       JBCard(
-        descricao: "Ponto",
         color: Colors.green,
         rota: AppRoutes.ponto,
-        icon: Icons.access_alarms_outlined,
+        icon: Icons.access_time_rounded,
       ),
     ];
   }

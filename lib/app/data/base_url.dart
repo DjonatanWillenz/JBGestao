@@ -1,2 +1,2 @@
-const baseUrlApp = 'http://172.16.3.16/painel';
+const baseUrlApp = 'http://teste.jbsoft.com.br/painel';
 const baseUrlHttps = 'app-server-piscicultura.herokuapp.com';
