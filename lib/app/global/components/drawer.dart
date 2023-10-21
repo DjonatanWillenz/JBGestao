@@ -101,11 +101,9 @@ class _MenuState extends State<JBDrawer> {
                       child: Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 13, vertical: 7),
-                            child: SvgPicture.asset(menu[i].icon,
-                                color: Colors.white),
-                          ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 13, vertical: 7),
+                              child: SvgPicture.asset(menu[i].icon)),
                           Text(
                             menu[i].title,
                             style: const TextStyle(

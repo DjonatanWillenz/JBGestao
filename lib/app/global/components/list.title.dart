@@ -25,7 +25,7 @@ class _JBListTileState extends State<JBListTile> {
     return ListTile(
       title: Text(widget.title!),
       subtitle: Text(widget.subtitle!),
-      trailing: Row(
+      trailing: const Row(
         children: [],
       ),
     );

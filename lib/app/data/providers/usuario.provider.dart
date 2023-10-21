@@ -10,9 +10,7 @@ class UsuarioApiClient {
       final response = await JBHttp().getInstancia().post('$baseUrlApp/login',
           {"idempresa": 181801, "username": email, "password": senha});
       return response.statusCode == 200 ? response.data : null;
-    } catch (e) {
-      print(e);
-    }
+    } catch (e) {}
   }
 
   create(Usuario user) async {

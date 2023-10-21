@@ -29,11 +29,8 @@ class JBHttp {
   }
 
   Future<Response<T>> post<T>(String url, Map<String, dynamic> body) async {
-    final a = await _dio!
-        .post(url, data: body, options: Options(headers: getHeaders()));
-
     return await _dio!
-        .post(url, data: body, options: Options(headers: getHeaders()));;
+        .post(url, data: body, options: Options(headers: getHeaders()));
   }
 
   Future<Response<T>> get<T>(String url) async {
