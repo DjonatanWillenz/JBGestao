@@ -1,3 +1,5 @@
+import 'dart:convert';
+
 import 'package:dio/dio.dart';
 import 'package:mobile/app/global/singleton/system.dart';
 
@@ -7,6 +9,10 @@ class JBHttp {
 
   JBHttp() {
     _dio = Dio();
+  }
+
+  String formatarUrl(String rota) {
+    return 'http://teste.jbsoft.com.br/painel' + rota;
   }
 
   Map<String, dynamic> getHeaders() {
@@ -29,20 +35,22 @@ class JBHttp {
   }
 
   Future<Response<T>> post<T>(String url, Map<String, dynamic> body) async {
-    return await _dio!
-        .post(url, data: body, options: Options(headers: getHeaders()));
+    return await _dio!.post(formatarUrl(url),
+        data: body, options: Options(headers: getHeaders()));
   }
 
   Future<Response<T>> get<T>(String url) async {
-    return await _dio!.get(url, options: Options(headers: getHeaders()));
+    return await _dio!
+        .get(formatarUrl(url), options: Options(headers: getHeaders()));
   }
 
   Future<Response<T>> delete<T>(String url) async {
-    return await _dio!.delete(url, options: Options(headers: getHeaders()));
+    return await _dio!
+        .delete(formatarUrl(url), options: Options(headers: getHeaders()));
   }
 
   Future<Response<T>> put<T>(String url, dynamic body) async {
-    return await _dio!
-        .put(url, data: body, options: Options(headers: getHeaders()));
+    return await _dio!.put(formatarUrl(url),
+        data: body, options: Options(headers: getHeaders()));
   }
 }

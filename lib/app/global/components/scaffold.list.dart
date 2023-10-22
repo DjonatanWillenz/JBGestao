@@ -12,7 +12,7 @@ class JBScaffoldList extends StatelessWidget {
     super.key,
     this.title,
     this.chave,
-    this.onPesquisa,
+    required this.onPesquisa,
   });
 
   @override

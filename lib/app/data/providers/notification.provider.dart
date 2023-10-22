@@ -1,14 +1,11 @@
 import 'package:mobile/app/data/models/notifications.model.dart';
 import 'package:mobile/app/data/providers/http.dart';
 
-import '../base_url.dart';
-
 class NotificationApiClient {
   getByIdUser(String iduser) async {
     try {
-      final response = await JBHttp()
-          .getInstancia()
-          .get('$baseUrlApp/api/notification/user/$iduser');
+      final response =
+          await JBHttp().getInstancia().get('/notification/user/$iduser');
       return response.statusCode == 200 ? response.data as List : null;
     } catch (e) {
       return null;
