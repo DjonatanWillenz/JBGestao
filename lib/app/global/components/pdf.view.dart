@@ -1,44 +1,44 @@
 import 'dart:convert';
-import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:mobile/app/modules/form09602/teste.dart';
-import 'package:path_provider/path_provider.dart';
-import 'package:pdf_render/pdf_render_widgets.dart';
+import 'package:mobile/app/data/providers/http.dart';
+import 'package:mobile/app/global/components/text.dart';
+import 'package:syncfusion_flutter_pdfviewer/pdfviewer.dart';
 
 class JBPdfView extends StatelessWidget {
-  const JBPdfView({super.key});
+  final String? urlRequest;
+
+  const JBPdfView({super.key, required this.urlRequest});
+
+  requisitarBase64() async {
+    var req = await JBHttp().getInstancia().get(urlRequest!);
+    if (req.statusCode == 200) {
+      return req.data['base64'];
+    } else {
+      return "";
+    }
+  }
+
+  Widget montar() {
+    final String base = requisitarBase64();
+    if (base.isNotEmpty) {
+      return SfPdfViewer.memory(
+        base64.decode(base),
+      );
+    } else {
+      return const Center(
+        child: JBText(
+          text: "Não foi possivel gerar o pdf solicitado.",
+        ),
+      );
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      child: Center(
-        child: FutureBuilder<String>(
-          future: renderPdfFromBase64(),
-          builder: (ctx, snp) {
-            if (snp.connectionState == ConnectionState.waiting) {
-              return const CircularProgressIndicator();
-            } else if (snp.hasError) {
-              return Text("Erro: ${snp.error}");
-            } else {
-              return PdfViewer.openFile(snp.data!);
-            }
-          },
-        ),
-      ),
+      child: Center(child: montar()),
     );
-  }
-
-  Future<String> renderPdfFromBase64() async {
-    final List<int> pdfData = base64.decode(pdfBase64);
-
-    final directory = (await getApplicationDocumentsDirectory()).path;
-    final filePath = '$directory/temp.pdf';
-
-    final File file = File(filePath);
-    await file.writeAsBytes(pdfData);
-
-    return file.path;
   }
 }

@@ -24,7 +24,7 @@ void main() {
           buttonColor: Colors.green,
         ),
         cardTheme: const CardTheme(
-          color: Colors.blue,
+          color: Color.fromARGB(255, 8, 115, 202),
         ),
       ),
       initialRoute: AppRoutes.carregamento,

@@ -15,20 +15,21 @@ class JBCard extends StatelessWidget {
       onTap: () => Get.toNamed(rota!),
       child: Container(
         decoration: BoxDecoration(
-            color: ThemeData().cardTheme.color,
-            borderRadius: BorderRadius.circular(10),
-            boxShadow: [
-              BoxShadow(
-                offset: const Offset(0, 2),
-                color: Theme.of(context).primaryColor.withOpacity(.9),
-                spreadRadius: 3,
-                blurRadius: 0.5,
-              )
-            ]),
+          color: ThemeData().cardTheme.color,
+          //     borderRadius: BorderRadius.circular(10),
+          //     boxShadow: [
+          //       BoxShadow(
+          //         offset: const Offset(0, 2),
+          //         color: Theme.of(context).primaryColor.withOpacity(.9),
+          //         spreadRadius: 3,
+          //         blurRadius: 0.5,
+          //       )
+          //     ]
+        ),
         child: Icon(
           icon,
           color: Colors.white,
-          size: 100,
+          size: 70,
         ),
       ),
     );

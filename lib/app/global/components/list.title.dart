@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mobile/app/global/components/button.item.dart';
 
-class JBListTile extends StatefulWidget {
+class JBListTile extends StatelessWidget {
   final String? title;
   final String? leading;
   final String? subtitle;
@@ -9,23 +9,18 @@ class JBListTile extends StatefulWidget {
 
   const JBListTile({
     super.key,
-    this.title,
+    required this.title,
     this.leading,
-    this.subtitle,
+    required this.subtitle,
     this.buttons,
   });
 
   @override
-  _JBListTileState createState() => _JBListTileState();
-}
-
-class _JBListTileState extends State<JBListTile> {
-  @override
   Widget build(BuildContext context) {
-    return ListTile(
-      title: Text(widget.title!),
-      subtitle: Text(widget.subtitle!),
-      trailing: const Row(
+    return const ListTile(
+      title: Text("teste", style: TextStyle(fontSize: 12)),
+      //subtitle: Text(subtitle!),
+      trailing: Row(
         children: [],
       ),
     );

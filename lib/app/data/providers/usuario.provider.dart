@@ -31,7 +31,7 @@ class UsuarioApiClient {
     try {
       final response = await JBHttp()
           .getInstancia()
-          .post('$baseUrlApp/logout', Map<String, dynamic>());
+          .post('$baseUrlApp/logout', <String, dynamic>{});
       return response.statusCode == 201 ? response.data : null;
     } catch (e) {}
   }

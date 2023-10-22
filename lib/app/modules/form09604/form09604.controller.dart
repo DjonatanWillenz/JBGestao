@@ -6,7 +6,10 @@ class Form09604Controller extends GetxController {
     List<JBListTile> response = [];
 
     response.add(
-      const JBListTile(title: "Text"),
+      const JBListTile(
+        title: "Text",
+        subtitle: "",
+      ),
     );
     return response;
   }
