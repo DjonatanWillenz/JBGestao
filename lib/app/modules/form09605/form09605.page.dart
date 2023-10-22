@@ -10,7 +10,7 @@ class Form09605Page extends GetView<Form09605Controller> {
   Widget build(BuildContext context) {
     return JBScaffoldList(
       title: "Ponto",
-      onPesquisa: controller.buscarListaPonto,
+      onPesquisa: controller.onPesquisa,
     );
   }
 }

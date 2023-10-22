@@ -15,8 +15,8 @@ class JBCard extends StatelessWidget {
       onTap: () => Get.toNamed(rota!),
       child: Container(
         decoration: BoxDecoration(
-          color: ThemeData().cardTheme.color,
-          //     borderRadius: BorderRadius.circular(10),
+          color: Colors.blue[400],
+          borderRadius: BorderRadius.circular(10),
           //     boxShadow: [
           //       BoxShadow(
           //         offset: const Offset(0, 2),
@@ -29,7 +29,7 @@ class JBCard extends StatelessWidget {
         child: Icon(
           icon,
           color: Colors.white,
-          size: 70,
+          size: 60,
         ),
       ),
     );
