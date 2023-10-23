@@ -72,7 +72,7 @@ class JBListTileConfirmm extends StatelessWidget {
           trailing: JBIconButton(
             icon: Icons.contact_support_outlined,
             sizeIcon: 25,
-            corIcon: ThemeData().bottomAppBarColor,
+            corIcon: ThemeData().buttonTheme.colorScheme?.background,
             onPressed: () => selected(),
           ),
         ),

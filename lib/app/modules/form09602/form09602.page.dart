@@ -9,8 +9,8 @@ class Form09602Page extends GetView<Form09602Controller> {
   @override
   Widget build(BuildContext context) {
     return JBScaffoldList(
-      title: "Recibos de pagamento",
-      onPesquisa: controller.buscarListaRecibosPagamento,
+      title: "Recibos de pagamentos",
+      onPesquisa: controller.onPesquisa,
     );
   }
 }

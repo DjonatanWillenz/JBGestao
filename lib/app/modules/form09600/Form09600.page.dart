@@ -18,7 +18,7 @@ class Form09600Page extends GetView<Form09601Controller> {
       ),
       drawer: JBDrawer(scaffoldKey: _scaffoldKey),
       key: _scaffoldKey,
-      body: SafeArea(
+      body: const SafeArea(
         child: SingleChildScrollView(
           child: Column(
             children: [],

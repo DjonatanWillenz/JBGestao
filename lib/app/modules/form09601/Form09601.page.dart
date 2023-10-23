@@ -18,7 +18,13 @@ class Form09601Page extends GetView<Form09601Controller> {
     return Scaffold(
       backgroundColor: Colors.blue[50],
       appBar: AppBar(
-        title: const JBText(text: "JB Gestão"),
+        title: const Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            JBText(text: "JB Gestão"),
+            Icon(Icons.notifications),
+          ],
+        ),
       ),
       drawer: JBDrawer(scaffoldKey: _scaffoldKey),
       key: _scaffoldKey,
@@ -37,22 +43,18 @@ class Form09601Page extends GetView<Form09601Controller> {
   List<JBCard> cards() {
     return [
       JBCard(
-        color: Colors.green,
         rota: AppRoutes.recibos,
         icon: Icons.attach_money,
       ),
       JBCard(
-        color: Colors.green,
         rota: AppRoutes.informes,
         icon: Icons.add_card_rounded,
       ),
       JBCard(
-        color: Colors.green,
         rota: AppRoutes.ferias,
         icon: Icons.free_cancellation_sharp,
       ),
       JBCard(
-        color: Colors.green,
         rota: AppRoutes.ponto,
         icon: Icons.access_time_rounded,
       ),

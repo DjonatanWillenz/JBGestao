@@ -15,13 +15,13 @@ class MenuModel {
 class JBDrawer extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
-  const JBDrawer({super.key, required this.scaffoldKey});
+ const JBDrawer({super.key, required this.scaffoldKey});
 
   @override
-  _MenuState createState() => _MenuState();
+  State<JBDrawer> createState() => _JBDrawerState();
 }
 
-class _MenuState extends State<JBDrawer> {
+class _JBDrawerState extends State<JBDrawer> {
   List<MenuModel> menu = [
     MenuModel(
       icon: 'assets/icons/Dashboard.svg',
@@ -101,11 +101,9 @@ class _MenuState extends State<JBDrawer> {
                       child: Row(
                         children: [
                           Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 13, vertical: 7),
-                            child: SvgPicture.asset(menu[i].icon,
-                                color: Colors.white),
-                          ),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 13, vertical: 7),
+                              child: SvgPicture.asset(menu[i].icon)),
                           Text(
                             menu[i].title,
                             style: const TextStyle(

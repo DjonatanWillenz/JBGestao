@@ -2,7 +2,7 @@ import 'package:get/get.dart';
 import 'package:mobile/app/data/models/agendamento.model.dart';
 
 class Form09606Controller extends GetxController {
-  Future<List<Agendamento>> buscarListaAgendamentos() async {
+  Future<List<Agendamento>> onPesquisa() async {
     List<Agendamento> response = [];
 
     response.add(
