@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:mobile/app/data/models/recibo.pagamento.model.dart';
 import 'package:mobile/app/data/providers/recibo.pagamento.provider.dart';
 
@@ -18,11 +17,13 @@ class ReciboPagamentoRepository {
   }
 
   Future<String> base64Recibo(int idholerite) async {
-    Future<Map<String, dynamic>> request =
+    Map<String, dynamic> request =
         await reciboRepository.getBase64Recibo(idholerite);
 
-    if (request.isBlank) {
-      throw Exception("");
+    if (request.isNotEmpty) {
+      return request["base64"];
     }
+
+    return "";
   }
 }

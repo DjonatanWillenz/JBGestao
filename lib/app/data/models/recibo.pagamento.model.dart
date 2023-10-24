@@ -5,7 +5,7 @@ class ReciboPagamento {
   String? _dataPagamento;
   double? _valorLiquido;
 
-  getId() => _id;
+  getId() => _id!;
   getCompetencia() => _competencia;
   getTipoCalculo() => _tipoCalculo;
   getDataPagamento() => _dataPagamento;

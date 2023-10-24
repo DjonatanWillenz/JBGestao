@@ -11,9 +11,8 @@ class UserRepository {
     Map<String, dynamic> auth = await usuarioProvider?.auth(email, senha);
     if (auth.isNotEmpty) {
       String token = auth["dados"]["token"];
-      print(token);
       AppSession.getInstancia().setToken(token);
-      if (!AppSession.getInstancia().getToken().isBlank) {
+      if (AppSession.getInstancia().getToken() != null) {
         List<Colaboracao> colaboracoes =
             await colaboracaoRepository!.findColaboracoes();
         if (colaboracoes.isEmpty) {

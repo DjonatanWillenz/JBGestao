@@ -10,7 +10,7 @@ class JBHttp {
   }
 
   String formatarUrl(String rota) {
-    return 'http://teste.jbsoft.com.br/api' + rota;
+    return 'http://teste.jbsoft.com.br/api$rota';
   }
 
   Map<String, dynamic> getHeaders() {

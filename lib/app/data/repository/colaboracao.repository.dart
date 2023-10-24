@@ -7,9 +7,9 @@ class ColaboracaoRepository {
   Future<List<Colaboracao>> findColaboracoes() async {
     List<Colaboracao> response = [];
 
-    List<Map<String, dynamic>> request = await provider.getColaboracoes();
+    Map<String, dynamic> request = await provider.getColaboracoes();
 
-    for (var item in request) {
+    for (var item in request["dados"] as List<Map<String, dynamic>>) {
       response.add(Colaboracao.fromJson(item));
     }
 
