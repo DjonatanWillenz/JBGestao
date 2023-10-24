@@ -9,8 +9,9 @@ class AuthController extends GetxController {
   final repositoty = Get.find<UserRepository>();
   final formKey = GlobalKey<FormState>();
 
-  TextEditingController email = TextEditingController();
-  TextEditingController senha = TextEditingController();
+  TextEditingController email =
+      TextEditingController(text: "isabelakaefer@jbsoft.com.br");
+  TextEditingController senha = TextEditingController(text: "I88500310!i");
 
   @override
   void onClose() {

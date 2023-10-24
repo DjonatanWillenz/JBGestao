@@ -6,8 +6,8 @@ import 'package:mobile/app/data/providers/http.dart';
 class UsuarioProvider {
   auth(String email, String senha) async {
     try {
-      final response = await JBHttp.getInstancia().post('/login',
-          {"idempresa": 181801, "username": email, "password": senha});
+      final response = await JBHttp.getInstancia()
+          .post('/login', {"serie": 5000, "login": email, "senha": senha});
       return response.statusCode == 200 ? response.data : null;
     } catch (e) {}
   }
