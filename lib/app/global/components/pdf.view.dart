@@ -11,7 +11,7 @@ class JBPdfView extends StatelessWidget {
   const JBPdfView({super.key, required this.urlRequest});
 
   requisitarBase64() async {
-    var req = await JBHttp().getInstancia().get(urlRequest!);
+    var req = await JBHttp.getInstancia().get(urlRequest!);
     if (req.statusCode == 200) {
       return req.data['base64'];
     } else {

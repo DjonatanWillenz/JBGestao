@@ -1,5 +1,3 @@
-import 'dart:convert';
-
 import 'package:dio/dio.dart';
 import 'package:mobile/app/global/singleton/system.dart';
 
@@ -29,7 +27,7 @@ class JBHttp {
     };
   }
 
-  JBHttp getInstancia() {
+  static JBHttp getInstancia() {
     _instancia ??= JBHttp();
     return _instancia!;
   }

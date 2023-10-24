@@ -8,6 +8,6 @@ class UserRegisterBinding implements Bindings {
   void dependencies() {
     Get.lazyPut(() => UserRegisterController());
     Get.lazyPut(() => UserRepository());
-    Get.lazyPut(() => UsuarioApiClient());
+    Get.lazyPut(() => UsuarioProvider());
   }
 }

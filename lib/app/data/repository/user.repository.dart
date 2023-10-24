@@ -1,26 +1,36 @@
+import 'package:mobile/app/data/models/colaboracao.model.dart';
 import 'package:mobile/app/data/models/usuario.model.dart';
 import 'package:mobile/app/data/providers/usuario.provider.dart';
+import 'package:mobile/app/data/repository/colaboracao.repository.dart';
+import 'package:mobile/app/global/singleton/system.dart';
 
 class UserRepository {
-  final UsuarioApiClient? apiClient = UsuarioApiClient();
-
+  final UsuarioProvider? usuarioProvider = UsuarioProvider();
+  final ColaboracaoRepository? colaboracaoRepository = ColaboracaoRepository();
   Future<Usuario?> auth(String email, String senha) async {
-    var user = await apiClient?.auth(email, senha);
-    //return user != null ? Usuario.fromJson(user) : null;
-    Usuario usuario = Usuario();
-    usuario.setId(1);
-    usuario.setNome("Djonatan Willenz");
-    usuario.setEmail("DjonatanWillenz@Jbsoft.com.br");
-    usuario.setSenha("");
-    return usuario;
+    Map<String, dynamic> auth = await usuarioProvider?.auth(email, senha);
+    if (auth.isNotEmpty) {
+      String token = auth["dados"]["token"];
+      print(token);
+      AppSession.getInstancia().setToken(token);
+      if (!AppSession.getInstancia().getToken().isBlank) {
+        List<Colaboracao> colaboracoes =
+            await colaboracaoRepository!.findColaboracoes();
+        if (colaboracoes.isEmpty) {
+          throw Exception("Não possui colaborações ativas");
+        }
+        AppSession.getInstancia().setColaboracoes(colaboracoes);
+      }
+    }
+    throw Exception("Erro na autenticação.");
   }
 
   Future<Usuario?> create(Usuario user) async {
-    var result = await apiClient?.create(user);
+    var result = await usuarioProvider?.create(user);
     return result != null ? Usuario.fromJson(result) : null;
   }
 
   logout() async {
-    await apiClient?.logout();
+    await usuarioProvider?.logout();
   }
 }

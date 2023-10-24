@@ -5,7 +5,7 @@ class NotificationApiClient {
   getByIdUser(String iduser) async {
     try {
       final response =
-          await JBHttp().getInstancia().get('/notification/user/$iduser');
+          await JBHttp.getInstancia().get('/notification/user/$iduser');
       return response.statusCode == 200 ? response.data as List : null;
     } catch (e) {
       return null;

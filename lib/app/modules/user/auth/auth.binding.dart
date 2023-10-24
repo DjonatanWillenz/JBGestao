@@ -8,6 +8,6 @@ class AuthBinding implements Bindings {
   void dependencies() {
     Get.lazyPut(() => AuthController());
     Get.lazyPut(() => UserRepository());
-    Get.lazyPut(() => UsuarioApiClient());
+    Get.lazyPut(() => UsuarioProvider());
   }
 }
