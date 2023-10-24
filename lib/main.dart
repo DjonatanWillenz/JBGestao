@@ -11,11 +11,11 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'JB Gestão mobile',
+      title: 'JB mobile',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.blue[100],
+        scaffoldBackgroundColor: Colors.blue[50],
         drawerTheme: const DrawerThemeData(
-          backgroundColor: Color.fromARGB(255, 7, 96, 184),
+          backgroundColor: Colors.blueAccent,
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color.fromARGB(255, 59, 71, 180),

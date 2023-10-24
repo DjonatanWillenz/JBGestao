@@ -8,6 +8,10 @@ class UserRepository {
   final UsuarioProvider? usuarioProvider = UsuarioProvider();
   final ColaboracaoRepository? colaboracaoRepository = ColaboracaoRepository();
   Future<Usuario?> auth(String email, String senha) async {
+    Usuario user = Usuario();
+    user.setEmail("djonatana");
+    user.setNome("dasdsa");
+    return user;
     Map<String, dynamic> auth = await usuarioProvider?.auth(email, senha);
     if (auth.isNotEmpty) {
       String token = auth["dados"]["token"];
@@ -24,8 +28,8 @@ class UserRepository {
     throw Exception("Erro na autenticação.");
   }
 
-  Future<Usuario?> create(Usuario user) async {
-    var result = await usuarioProvider?.create(user);
+  Future<Usuario?> cadastrar(Usuario usuario) async {
+    var result = await usuarioProvider?.cadastrar(usuario);
     return result != null ? Usuario.fromJson(result) : null;
   }
 

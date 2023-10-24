@@ -12,7 +12,7 @@ class UsuarioProvider {
     } catch (e) {}
   }
 
-  create(Usuario user) async {
+  cadastrar(Usuario user) async {
     try {
       final response =
           await JBHttp.getInstancia().post('/auth/register', user.toJson());

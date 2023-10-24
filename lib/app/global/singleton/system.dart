@@ -20,7 +20,7 @@ class AppSession {
     return _instancia!;
   }
 
-  getToken() => _token;
+  getToken() => _token ?? "";
   setToken(value) => _token = value;
 
   getColaboracoes() => _colaboracoes;

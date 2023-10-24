@@ -25,7 +25,7 @@ class UserRegisterController extends GetxController {
         usuario.setSenha(senha.text);
 
         try {
-          Usuario? newUsuario = await repositoty.create(usuario);
+          Usuario? newUsuario = await repositoty.cadastrar(usuario);
           _realizarLoginAposConcluirCadastro(newUsuario!);
         } catch (e) {
           Get.snackbar("Erro:", e.toString());

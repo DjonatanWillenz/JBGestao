@@ -38,11 +38,11 @@ class AuthController extends GetxController {
     }
   }
 
-  _saveDataAuthMemory(user, password) async {
+  _saveDataAuthMemory(usuario, senha) async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    prefs.setString('email', user.getEmail());
-    prefs.setString('password', password);
-    prefs.setString('token', user.getToken());
+    prefs.setString('email', usuario.getEmail());
+    prefs.setString('senha', senha);
+    prefs.setString('token', usuario.getToken());
   }
 
   sendmail() {

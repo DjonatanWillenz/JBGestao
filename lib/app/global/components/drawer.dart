@@ -15,7 +15,7 @@ class MenuModel {
 class JBDrawer extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
- const JBDrawer({super.key, required this.scaffoldKey});
+  const JBDrawer({super.key, required this.scaffoldKey});
 
   @override
   State<JBDrawer> createState() => _JBDrawerState();
@@ -64,7 +64,14 @@ class _JBDrawerState extends State<JBDrawer> {
               children: [
                 UserAccountsDrawerHeader(
                   currentAccountPicture:
-                      const Icon(Icons.account_circle, size: 80),
+                      AppSession.getInstancia().getUsuario().getFotoPerfil() !=
+                              null
+                          ? Image.memory(
+                              AppSession.getInstancia()
+                                  .getUsuario()
+                                  .getFotoPerfil(),
+                            )
+                          : const Icon(Icons.account_circle, size: 80),
                   accountName: Text(
                     AppSession.getInstancia().getUsuario().getNome(),
                     style: const TextStyle(fontSize: 17, color: Colors.white),
