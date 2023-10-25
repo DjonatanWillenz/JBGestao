@@ -7,9 +7,9 @@ class ReciboPagamentoRepository {
   Future<List<ReciboPagamento>> getRecibosPagamento() async {
     List<ReciboPagamento> response = [];
 
-    List<Map<String, dynamic>> request = await reciboRepository.getRecibos();
+    Map<String, dynamic> request = await reciboRepository.getRecibos();
 
-    for (var elm in request) {
+    for (var elm in request["dados"]) {
       response.add(ReciboPagamento.fromJson(elm));
     }
 
@@ -21,7 +21,7 @@ class ReciboPagamentoRepository {
         await reciboRepository.getBase64Recibo(idholerite);
 
     if (request.isNotEmpty) {
-      return request["base64"];
+      return request["dados"]["base64"];
     }
 
     return "";

@@ -15,7 +15,6 @@ class JBButtonGrid extends StatefulWidget {
   onPressed() {
     switch (metodo) {
       case HttpTipo.get:
-        print("TeSTE");
         break;
       default:
     }
