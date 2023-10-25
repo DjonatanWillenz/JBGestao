@@ -4,6 +4,7 @@ import 'package:mobile/app/data/models/usuario.model.dart';
 
 class AppSession {
   static AppSession? _instancia;
+
   Usuario? _usuario;
   List<Colaboracao>? _colaboracoes;
   Empresa? _empresa;
@@ -29,4 +30,6 @@ class AppSession {
   setEmpresa(value) => _empresa = value;
   getUsuario() => _usuario;
   setUsuario(value) => _usuario = value;
+
+  getChaveCLiente() => "MÇLDASMLÇDSA";
 }

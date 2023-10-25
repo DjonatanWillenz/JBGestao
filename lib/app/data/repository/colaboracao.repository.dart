@@ -9,7 +9,7 @@ class ColaboracaoRepository {
 
     Map<String, dynamic> request = await provider.getColaboracoes();
 
-    for (var item in request["dados"] as List<Map<String, dynamic>>) {
+    for (var item in request["colaboracoes"] as List<Map<String, dynamic>>) {
       response.add(Colaboracao.fromJson(item));
     }
 

@@ -8,10 +8,6 @@ class UserRepository {
   final UsuarioProvider? usuarioProvider = UsuarioProvider();
   final ColaboracaoRepository? colaboracaoRepository = ColaboracaoRepository();
   Future<Usuario?> auth(String email, String senha) async {
-    Usuario user = Usuario();
-    user.setEmail("djonatana");
-    user.setNome("dasdsa");
-    return user;
     Map<String, dynamic> auth = await usuarioProvider?.auth(email, senha);
     if (auth.isNotEmpty) {
       String token = auth["dados"]["token"];

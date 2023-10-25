@@ -11,9 +11,9 @@ void main() {
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'JB mobile',
+      title: 'JBMobile',
       theme: ThemeData(
-        scaffoldBackgroundColor: Colors.blue[50],
+        scaffoldBackgroundColor: Colors.blue[10],
         drawerTheme: const DrawerThemeData(
           backgroundColor: Colors.blueAccent,
         ),

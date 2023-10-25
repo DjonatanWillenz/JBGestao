@@ -10,8 +10,8 @@ class AuthController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController email =
-      TextEditingController(text: "isabelakaefer@jbsoft.com.br");
-  TextEditingController senha = TextEditingController(text: "I88500310!i");
+      TextEditingController(text: "jbtarefa@jbsoft.com.br");
+  TextEditingController senha = TextEditingController(text: "JB#TAFerA@2022");
 
   @override
   void onClose() {

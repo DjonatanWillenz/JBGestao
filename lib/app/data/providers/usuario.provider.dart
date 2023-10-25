@@ -2,14 +2,24 @@ import 'dart:convert';
 
 import 'package:mobile/app/data/models/usuario.model.dart';
 import 'package:mobile/app/data/providers/http.dart';
+import 'package:mobile/app/global/singleton/system.dart';
 
 class UsuarioProvider {
   auth(String email, String senha) async {
     try {
-      final response = await JBHttp.getInstancia()
-          .post('/login', {"serie": 5000, "login": email, "senha": senha});
+      final response = await JBHttp.getInstancia().post(
+        '/login',
+        {
+          "serie": 5000,
+          "login": email,
+          "senha": senha,
+          "chave": AppSession.getInstancia().getChaveCLiente()
+        },
+      );
       return response.statusCode == 200 ? response.data : null;
-    } catch (e) {}
+    } catch (e) {
+      print(e);
+    }
   }
 
   cadastrar(Usuario user) async {
