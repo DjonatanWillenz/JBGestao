@@ -19,13 +19,9 @@ class UserRegisterController extends GetxController {
   create() async {
     if (formKey.currentState!.validate()) {
       if (senha.text == confirmarSenha.text) {
-        Usuario usuario = Usuario();
-        usuario.setNome(nome.text);
-        usuario.setEmail(email.text);
-        usuario.setSenha(senha.text);
-
         try {
-          Usuario? newUsuario = await repositoty.cadastrar(usuario);
+          Usuario? newUsuario =
+              await repositoty.cadastrar(nome.text, email.text, senha.text);
           _realizarLoginAposConcluirCadastro(newUsuario!);
         } catch (e) {
           Get.snackbar("Erro:", e.toString());

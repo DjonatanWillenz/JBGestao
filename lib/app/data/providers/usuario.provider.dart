@@ -1,6 +1,4 @@
 import 'dart:convert';
-
-import 'package:mobile/app/data/models/usuario.model.dart';
 import 'package:mobile/app/data/providers/http.dart';
 import 'package:mobile/app/global/singleton/system.dart';
 
@@ -22,10 +20,10 @@ class UsuarioProvider {
     }
   }
 
-  cadastrar(Usuario user) async {
+  cadastrar(nome, email, senha) async {
     try {
-      final response =
-          await JBHttp.getInstancia().post('/auth/register', user.toJson());
+      final response = await JBHttp.getInstancia().post(
+          '/auth/register', {"nome": nome, "email": email, "senha": senha});
       if (response.statusCode == 201) {
         return response.data;
       } else {
@@ -37,6 +35,16 @@ class UsuarioProvider {
 
   getPerfil() async {
     String ulrRequest = "/perfil";
+    try {
+      var request = await JBHttp.getInstancia().get(ulrRequest);
+      return request.statusCode == 200 ? request.data : null;
+    } catch (e) {
+      return null;
+    }
+  }
+
+  getFotoPerfil() async {
+    String ulrRequest = "/foto-perfil";
     try {
       var request = await JBHttp.getInstancia().get(ulrRequest);
       return request.statusCode == 200 ? request.data : null;

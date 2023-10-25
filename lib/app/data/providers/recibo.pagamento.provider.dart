@@ -3,7 +3,10 @@ import 'package:mobile/app/global/singleton/system.dart';
 
 class ReciboPagamentoProvider {
   getRecibos() async {
-    const urlRequest = "/integracao/painel/recibo-pagamento";
+    int idempresa = AppSession.getInstancia().getEmpresa().getId();
+    int idpessoa = AppSession.getInstancia().getUsuario().getPessoa().getId();
+    String urlRequest =
+        '/integracao/painel/recibo-pagamento/$idempresa/$idpessoa';
     try {
       var request = await JBHttp.getInstancia().get(urlRequest);
       return request.statusCode == 200 ? request.data : null;

@@ -5,7 +5,7 @@ import 'package:mobile/app/global/singleton/system.dart';
 
 class UserRepository {
   final UsuarioProvider provider = UsuarioProvider();
-  Future<Usuario?> auth(String email, String senha) async {
+  Future<void> auth(String email, String senha) async {
     Map<String, dynamic> auth = await provider.auth(email, senha);
     if (auth.isNotEmpty) {
       String token = auth["dados"]["token"];
@@ -16,20 +16,22 @@ class UserRepository {
           throw Exception("Não possui colaborações ativas");
         }
         List<Colaboracao> colaboracoes = [];
-        for (var item
-            in dadosPerfil["colaboracoes"] as List<Map<String, dynamic>>) {
+        for (var item in dadosPerfil["colaboracoes"]) {
           colaboracoes.add(Colaboracao.fromJson(item));
         }
         AppSession.getInstancia().setColaboracoes(colaboracoes);
-        AppSession.getInstancia().setUsuario(
-            Usuario.fromJson(dadosPerfil["usuario"] as Map<String, dynamic>));
+        AppSession.getInstancia()
+            .setUsuario(Usuario.fromJson(dadosPerfil["usuario"]));
+        var fotoPerfil = await provider.getFotoPerfil();
+        AppSession.getInstancia()
+            .getUsuario()
+            .setFotoPerfil(fotoPerfil["base64"]);
       }
     }
-    throw Exception("Erro na autenticação.");
   }
 
-  Future<Usuario?> cadastrar(Usuario usuario) async {
-    var result = await provider.cadastrar(usuario);
+  Future<Usuario?> cadastrar(String nome, String email, String senha) async {
+    var result = await provider.cadastrar(nome, email, senha);
     return result != null ? Usuario.fromJson(result) : null;
   }
 

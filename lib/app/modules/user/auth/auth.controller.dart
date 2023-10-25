@@ -10,8 +10,9 @@ class AuthController extends GetxController {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController email =
-      TextEditingController(text: "jbtarefa@jbsoft.com.br");
-  TextEditingController senha = TextEditingController(text: "JB#TAFerA@2022");
+      TextEditingController(text: "djonatanwillenz@jbsoft.com.br");
+  TextEditingController senha =
+      TextEditingController(text: "@Djona233828jbsoft");
 
   @override
   void onClose() {
@@ -23,9 +24,9 @@ class AuthController extends GetxController {
   validate() {
     if ((email.text != '') && (senha.text != '')) {
       repositoty.auth(email.text, senha.text).then((value) {
-        if (value != null) {
-          AppSession.getInstancia().setUsuario(value);
-          _saveDataAuthMemory(value, senha.text);
+        if (AppSession.getInstancia().getUsuario() != null) {
+          _saveDataAuthMemory(
+              AppSession.getInstancia().getUsuario(), senha.text);
           Get.offAndToNamed(AppRoutes.paginaInicial);
         } else {
           Get.snackbar('Erro:',
@@ -42,7 +43,6 @@ class AuthController extends GetxController {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     prefs.setString('email', usuario.getEmail());
     prefs.setString('senha', senha);
-    prefs.setString('token', usuario.getToken());
   }
 
   sendmail() {

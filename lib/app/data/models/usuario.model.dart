@@ -1,38 +1,29 @@
+import 'dart:convert';
 import 'dart:typed_data';
+
+import 'package:mobile/app/data/models/login.model.dart';
+import 'package:mobile/app/data/models/pessoa.model.dart';
 
 class Usuario {
   int? _id;
-  String? _nome;
-  String? _email;
-  String? _senha;
+  Pessoa? _pessoa;
+  Login? _login;
   Uint8List? _fotoPerfil;
 
   getId() => _id ?? "";
-  getNome() => _nome ?? "";
-  getEmail() => _email ?? "";
-  getSenha() => _senha ?? "";
+  getLogin() => _login;
+  getPessoa() => _pessoa;
   getFotoPerfil() => _fotoPerfil;
 
   setId(value) => _id = value;
-  setNome(value) => _nome = value;
-  setEmail(value) => _email = value;
-  setSenha(value) => _senha = value;
-  setFotoPerfil(value) => _fotoPerfil = value;
+  setLogin(value) => _login = value;
+  setFotoPerfil(value) => _fotoPerfil = base64.decode(value);
 
   Usuario();
 
   Usuario.fromJson(Map<String, dynamic> json) {
     _id = json['id'];
-    _nome = json['nome'];
-    _email = json['email'];
-    _fotoPerfil = json['foto_perfil'];
-  }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = <String, dynamic>{};
-    data['id'] = _id;
-    data['name'] = _nome;
-    data['email'] = _email;
-    return data;
+    _pessoa = Pessoa.fromJson(json["pessoa"]);
+    _login = Login.fromJson(json['login']);
   }
 }
