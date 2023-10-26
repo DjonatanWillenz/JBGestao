@@ -13,7 +13,6 @@ class ReciboPagamentoRepository {
       response.add(ReciboPagamento.fromJson(elm));
     }
 
-    response.add(ReciboPagamento());
     return response;
   }
 

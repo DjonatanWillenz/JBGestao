@@ -3,7 +3,7 @@ class Empresa {
   String? _nome;
   String? _inscricao;
 
-  getId() => _id;
+  getId() => _id ?? 230819;
   getNome() => _nome;
   getInscricao() => _inscricao;
 
