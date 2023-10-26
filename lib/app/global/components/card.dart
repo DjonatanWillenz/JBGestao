@@ -27,9 +27,9 @@ class JBCard extends StatelessWidget {
           //     ]
         ),
         child: Image.asset(
-          'assets/recibo_pagamento.png',
-          height: 150,
-          width: 300,
+          urlIcon!,
+          height: 20,
+          width: 20,
         ),
       ),
     );

@@ -19,13 +19,15 @@ dependencies:
   dio: ^5.3.3
   path_provider: ^2.1.1
   syncfusion_flutter_pdfviewer: ^23.1.41
+  
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   flutter_lints: ^2.0.0
-
+  flutter_launcher_icons: ^0.13.1
+  
 flutter: 
   uses-material-design: true
   assets:
@@ -33,5 +35,6 @@ flutter:
     - assets/recibo_pagamento.png
     - assets/informe_rendimentos.png
     - assets/ferias.png
+    - assets/ponto.png
     - assets/logo.png
     - assets/icon.png

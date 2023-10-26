@@ -88,15 +88,15 @@ class Form09601Page extends GetView<Form09601Controller> {
       ),
       JBCard(
         rota: AppRoutes.informes,
-        urlIcon: "",
+        urlIcon: "assets/informe_rendimentos.png",
       ),
       JBCard(
         rota: AppRoutes.ferias,
-        urlIcon: "",
+        urlIcon: "assets/ferias.png",
       ),
       JBCard(
         rota: AppRoutes.ponto,
-        urlIcon: "",
+        urlIcon: "assets/ponto.png",
       ),
     ];
   }

@@ -8,6 +8,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "archive",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/archive-3.4.6",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "args",
       "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/args-2.4.2",
       "packageUri": "lib/",
@@ -30,6 +36,18 @@
       "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/characters-1.3.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "checked_yaml",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/checked_yaml-2.0.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "cli_util",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/cli_util-0.4.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
     },
     {
       "name": "clock",
@@ -104,6 +122,12 @@
       "languageVersion": "3.0"
     },
     {
+      "name": "flutter_launcher_icons",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/flutter_launcher_icons-0.13.1",
+      "packageUri": "lib/",
+      "languageVersion": "2.18"
+    },
+    {
       "name": "flutter_lints",
       "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/flutter_lints-2.0.1",
       "packageUri": "lib/",
@@ -146,6 +170,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "image",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/image-4.1.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.15"
+    },
+    {
       "name": "intl",
       "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/intl-0.18.1",
       "packageUri": "lib/",
@@ -154,6 +184,12 @@
     {
       "name": "js",
       "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/js-0.6.7",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
+      "name": "json_annotation",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/json_annotation-4.8.1",
       "packageUri": "lib/",
       "languageVersion": "2.19"
     },
@@ -252,6 +288,12 @@
       "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/plugin_platform_interface-2.1.4",
       "packageUri": "lib/",
       "languageVersion": "2.17"
+    },
+    {
+      "name": "pointycastle",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/pointycastle-3.7.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.14"
     },
     {
       "name": "process",
@@ -524,13 +566,19 @@
       "languageVersion": "2.19"
     },
     {
+      "name": "yaml",
+      "rootUri": "file:///home/djona/.pub-cache/hosted/pub.dev/yaml-3.1.2",
+      "packageUri": "lib/",
+      "languageVersion": "2.19"
+    },
+    {
       "name": "mobile",
       "rootUri": "../",
       "packageUri": "lib/",
       "languageVersion": "3.0"
     }
   ],
-  "generated": "2023-10-26T02:20:14.254049Z",
+  "generated": "2023-10-26T02:33:58.171699Z",
   "generator": "pub",
   "generatorVersion": "3.1.2"
 }
