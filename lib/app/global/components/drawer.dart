@@ -80,14 +80,20 @@ class _JBDrawerState extends State<JBDrawer> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       Text(
-                        AppSession.getInstancia().getUsuario().getNome(),
+                        AppSession.getInstancia()
+                            .getUsuario()
+                            .getPessoa()
+                            .getNome(),
                         style:
                             const TextStyle(fontSize: 16, color: Colors.white),
                       ),
                     ],
                   ),
                   accountEmail: Text(
-                    AppSession.getInstancia().getUsuario().getEmail(),
+                    AppSession.getInstancia()
+                        .getUsuario()
+                        .getLogin()
+                        .getEmail(),
                     style: const TextStyle(fontSize: 14, color: Colors.white),
                   ),
                   decoration: BoxDecoration(
@@ -118,13 +124,14 @@ class _JBDrawerState extends State<JBDrawer> {
                       child: Row(
                         children: [
                           Padding(
-                              padding: const EdgeInsets.symmetric(
-                                  horizontal: 13, vertical: 7),
-                              child: SvgPicture.asset(
-                                menu[i].icon,
-                                height: 25,
-                                color: Colors.white,
-                              )),
+                            padding: const EdgeInsets.symmetric(
+                                horizontal: 13, vertical: 7),
+                            child: SvgPicture.asset(
+                              menu[i].icon,
+                              height: 25,
+                              color: Colors.white,
+                            ),
+                          ),
                           Text(
                             menu[i].title,
                             style: const TextStyle(
