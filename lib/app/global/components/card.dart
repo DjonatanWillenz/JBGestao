@@ -4,10 +4,10 @@ import 'package:get/get.dart';
 // ignore: must_be_immutable
 class JBCard extends StatelessWidget {
   MaterialColor? color;
-  IconData? icon;
+  String? urlIcon;
   String? rota;
 
-  JBCard({super.key, this.color, this.icon, this.rota});
+  JBCard({super.key, this.color, this.urlIcon, this.rota});
 
   @override
   Widget build(BuildContext context) {
@@ -26,10 +26,10 @@ class JBCard extends StatelessWidget {
           //       )
           //     ]
         ),
-        child: Icon(
-          icon,
-          color: Colors.white,
-          size: 60,
+        child: Image.asset(
+          'assets/recibo_pagamento.png',
+          height: 150,
+          width: 300,
         ),
       ),
     );

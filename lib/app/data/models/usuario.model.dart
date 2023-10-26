@@ -12,7 +12,7 @@ class Usuario {
 
   getId() => _id ?? "";
   getLogin() => _login;
-  getPessoa() => _pessoa;
+  getPessoa() => _pessoa ?? Pessoa();
   getFotoPerfil() => _fotoPerfil;
 
   setId(value) => _id = value;

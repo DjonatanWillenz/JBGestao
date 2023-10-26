@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:mobile/app/global/components/card.dart';
 import 'package:mobile/app/global/components/text.dart';
 import 'package:mobile/app/global/components/drawer.dart';
+import 'package:mobile/app/global/singleton/system.dart';
 import 'package:mobile/app/modules/form09601/Form09601.controller.dart';
 import 'package:mobile/app/routes/app_pages.dart';
 
@@ -18,6 +19,7 @@ class Form09601Page extends GetView<Form09601Controller> {
     return Scaffold(
       backgroundColor: Colors.blue[50],
       appBar: AppBar(
+        elevation: 0,
         title: const Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -28,14 +30,52 @@ class Form09601Page extends GetView<Form09601Controller> {
       ),
       drawer: JBDrawer(scaffoldKey: _scaffoldKey),
       key: _scaffoldKey,
-      body: Padding(
-        padding: const EdgeInsets.all(20),
-        child: GridView.count(
-          crossAxisSpacing: 40,
-          mainAxisSpacing: 30,
-          crossAxisCount: 2,
-          children: [...cards()],
-        ),
+      body: ListView(
+        padding: EdgeInsets.zero,
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              color: Theme.of(context).appBarTheme.backgroundColor,
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(100),
+              ),
+            ),
+            child: Column(
+              children: [
+                const SizedBox(height: 20),
+                ListTile(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 30),
+                  title: Text(
+                    "Olá ${AppSession.getInstancia().getUsuario().getPessoa().getNome()}",
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          color: Colors.white,
+                        ),
+                  ),
+                ),
+                const SizedBox(height: 30)
+              ],
+            ),
+          ),
+          Container(
+            color: Theme.of(context).appBarTheme.backgroundColor,
+            child: Container(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              decoration: const BoxDecoration(
+                  color: Colors.white,
+                  borderRadius:
+                      BorderRadius.only(topLeft: Radius.circular(200))),
+              child: GridView.count(
+                shrinkWrap: true,
+                physics: const NeverScrollableScrollPhysics(),
+                crossAxisCount: 2,
+                crossAxisSpacing: 40,
+                mainAxisSpacing: 30,
+                children: [...cards()],
+              ),
+            ),
+          ),
+          const SizedBox(height: 20)
+        ],
       ),
     );
   }
@@ -44,19 +84,19 @@ class Form09601Page extends GetView<Form09601Controller> {
     return [
       JBCard(
         rota: AppRoutes.recibos,
-        icon: Icons.attach_money,
+        urlIcon: "assets/recibo_pagamento.png",
       ),
       JBCard(
         rota: AppRoutes.informes,
-        icon: Icons.add_card_rounded,
+        urlIcon: "",
       ),
       JBCard(
         rota: AppRoutes.ferias,
-        icon: Icons.free_cancellation_sharp,
+        urlIcon: "",
       ),
       JBCard(
         rota: AppRoutes.ponto,
-        icon: Icons.access_time_rounded,
+        urlIcon: "",
       ),
     ];
   }

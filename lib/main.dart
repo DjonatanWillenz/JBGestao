@@ -7,10 +7,19 @@ import 'package:mobile/app/routes/app_routes.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    statusBarColor: Colors.transparent,
-  ));
-  SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp]);
+
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(
+      statusBarColor: Colors.transparent,
+    ),
+  );
+
+  SystemChrome.setPreferredOrientations(
+    [
+      DeviceOrientation.portraitUp,
+    ],
+  );
+
   runApp(
     GetMaterialApp(
       debugShowCheckedModeBanner: false,
@@ -30,7 +39,7 @@ void main() {
           color: Color.fromARGB(255, 8, 115, 202),
         ),
       ),
-      initialRoute: AppRoutes.carregamento,
+      initialRoute: AppRoutes.paginaInicial,
       initialBinding: InitBinding(),
       //home: InitialPage(),
       getPages: AppPages.pages,
