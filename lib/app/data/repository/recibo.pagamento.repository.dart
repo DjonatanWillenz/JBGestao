@@ -7,11 +7,11 @@ class ReciboPagamentoRepository {
   Future<List<ReciboPagamento>> getRecibosPagamento() async {
     List<ReciboPagamento> response = [];
 
-    //Map<String, dynamic> request = await reciboRepository.getRecibos();
+    Map<String, dynamic> request = await reciboRepository.getRecibos();
 
-    //for (var elm in request["dados"]) {
-    //  response.add(ReciboPagamento.fromJson(elm));
-    // }
+    for (var elm in request["dados"]) {
+      response.add(ReciboPagamento.fromJson(elm));
+    }
 
     response.add(ReciboPagamento());
     return response;

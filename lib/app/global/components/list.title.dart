@@ -17,11 +17,11 @@ class JBListTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
-      title: Text("teste", style: TextStyle(fontSize: 12)),
-      //subtitle: Text(subtitle!),
+    return ListTile(
+      title: Text(title!, style: const TextStyle(fontSize: 12)),
+      subtitle: Text(subtitle!),
       trailing: Row(
-        children: [],
+        children: [...buttons!],
       ),
     );
   }

@@ -9,8 +9,15 @@ class JBButtonGrid extends StatefulWidget {
   final HttpTipo? metodo;
   final AcaoTipo? acao;
   final IconData? icone;
+  final String? url;
 
-  const JBButtonGrid({super.key, this.metodo, this.icone, this.acao});
+  const JBButtonGrid({
+    super.key,
+    this.metodo,
+    this.icone,
+    this.acao,
+    this.url,
+  });
 
   onPressed() {
     switch (metodo) {
