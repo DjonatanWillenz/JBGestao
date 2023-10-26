@@ -1,6 +1,5 @@
 import 'package:get/get.dart';
 import 'package:mobile/app/data/providers/usuario.provider.dart';
-import 'package:mobile/app/data/repository/colaboracao.repository.dart';
 import 'package:mobile/app/data/repository/user.repository.dart';
 import 'package:mobile/app/modules/initial/init.controller.dart';
 import 'package:mobile/app/modules/user/auth/auth.controller.dart';
@@ -12,6 +11,5 @@ class InitBinding implements Bindings {
     Get.lazyPut(() => AuthController());
     Get.lazyPut(() => UsuarioProvider());
     Get.lazyPut(() => UserRepository());
-    Get.lazyPut(() => ColaboracaoRepository());
   }
 }

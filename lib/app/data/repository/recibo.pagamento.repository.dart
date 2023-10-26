@@ -1,4 +1,3 @@
-import 'package:get/get.dart';
 import 'package:mobile/app/data/models/recibo.pagamento.model.dart';
 import 'package:mobile/app/data/providers/recibo.pagamento.provider.dart';
 
@@ -8,21 +7,24 @@ class ReciboPagamentoRepository {
   Future<List<ReciboPagamento>> getRecibosPagamento() async {
     List<ReciboPagamento> response = [];
 
-    List<Map<String, dynamic>> request = await reciboRepository.getRecibos();
+    //Map<String, dynamic> request = await reciboRepository.getRecibos();
 
-    for (var elm in request) {
-      response.add(ReciboPagamento.fromJson(elm));
-    }
+    //for (var elm in request["dados"]) {
+    //  response.add(ReciboPagamento.fromJson(elm));
+    // }
 
+    response.add(ReciboPagamento());
     return response;
   }
 
   Future<String> base64Recibo(int idholerite) async {
-    Future<Map<String, dynamic>> request =
+    Map<String, dynamic> request =
         await reciboRepository.getBase64Recibo(idholerite);
 
-    if (request.isBlank) {
-      throw Exception("");
+    if (request.isNotEmpty) {
+      return request["dados"]["base64"];
     }
+
+    return "";
   }
 }

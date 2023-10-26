@@ -1,18 +1,9 @@
 import 'package:get/get.dart';
-import 'package:mobile/app/data/models/agendamento.model.dart';
+import 'package:mobile/app/global/components/list.title.dart';
 
 class Form09606Controller extends GetxController {
-  Future<List<Agendamento>> onPesquisa() async {
-    List<Agendamento> response = [];
-
-    response.add(
-      Agendamento(
-        titulo: "Recibo pagamento",
-        descricao:
-            "Solicitação de recibo de pagamento para competência 02/2023 ",
-        situacao: "Em processamento",
-      ),
-    );
+  Future<List<JBListTile>> onPesquisa() async {
+    List<JBListTile> response = [];
 
     return response;
   }

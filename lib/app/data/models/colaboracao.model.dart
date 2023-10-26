@@ -2,7 +2,7 @@ import 'package:mobile/app/data/models/empresa.model.dart';
 
 class Colaboracao {
   int? _id;
-  DateTime? _dataInicio;
+  String? _dataInicio;
   String? _perfilTipo;
   Empresa? _empresa;
 

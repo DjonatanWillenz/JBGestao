@@ -15,8 +15,7 @@ class InitController extends GetxController {
     ehPrimeiroLogin = await _findDataUserMemory();
 
     if (ehPrimeiroLogin!) {
-      AppSession.getInstancia()
-          .setUsuario(await userRepository?.auth(email!, senha!));
+      await userRepository?.auth(email!, senha!);
       if (AppSession.getInstancia().getUsuario() != null) {
         Get.offAndToNamed(AppRoutes.paginaInicial);
       }

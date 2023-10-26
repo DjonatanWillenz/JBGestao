@@ -59,7 +59,7 @@ class JBTextFormField extends StatelessWidget {
           ),
           fillColor: Colors.grey.shade200,
           filled: true,
-          hintText: label,
+          labelText: label,
           hintStyle: TextStyle(color: Colors.grey[500]),
         ),
         style: const TextStyle(fontSize: 16),

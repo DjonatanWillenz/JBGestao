@@ -15,7 +15,7 @@ class MenuModel {
 class JBDrawer extends StatefulWidget {
   final GlobalKey<ScaffoldState> scaffoldKey;
 
- const JBDrawer({super.key, required this.scaffoldKey});
+  const JBDrawer({super.key, required this.scaffoldKey});
 
   @override
   State<JBDrawer> createState() => _JBDrawerState();
@@ -64,10 +64,27 @@ class _JBDrawerState extends State<JBDrawer> {
               children: [
                 UserAccountsDrawerHeader(
                   currentAccountPicture:
-                      const Icon(Icons.account_circle, size: 80),
-                  accountName: Text(
-                    AppSession.getInstancia().getUsuario().getNome(),
-                    style: const TextStyle(fontSize: 17, color: Colors.white),
+                      AppSession.getInstancia().getUsuario().getFotoPerfil() !=
+                              null
+                          ? CircleAvatar(
+                              radius: 30.0,
+                              backgroundImage: MemoryImage(
+                                AppSession.getInstancia()
+                                    .getUsuario()
+                                    .getFotoPerfil(),
+                              ), //he
+                            )
+                          : const Icon(Icons.account_circle, size: 80),
+                  accountName: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Text(
+                        AppSession.getInstancia().getUsuario().getNome(),
+                        style:
+                            const TextStyle(fontSize: 16, color: Colors.white),
+                      ),
+                    ],
                   ),
                   accountEmail: Text(
                     AppSession.getInstancia().getUsuario().getEmail(),
@@ -103,12 +120,16 @@ class _JBDrawerState extends State<JBDrawer> {
                           Padding(
                               padding: const EdgeInsets.symmetric(
                                   horizontal: 13, vertical: 7),
-                              child: SvgPicture.asset(menu[i].icon)),
+                              child: SvgPicture.asset(
+                                menu[i].icon,
+                                height: 25,
+                                color: Colors.white,
+                              )),
                           Text(
                             menu[i].title,
                             style: const TextStyle(
-                              fontSize: 16,
-                              color: Colors.grey,
+                              fontSize: 18,
+                              color: Colors.white,
                               fontWeight: FontWeight.normal,
                             ),
                           )
