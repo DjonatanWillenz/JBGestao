@@ -6,10 +6,10 @@ class ReciboPagamento {
   double? _valorLiquido;
 
   getId() => _id!;
-  getCompetencia() => _competencia;
-  getTipoCalculo() => _tipoCalculo;
-  getDataPagamento() => _dataPagamento;
-  getValorLiquido() => _valorLiquido;
+  getCompetencia() => _competencia ?? "";
+  getTipoCalculo() => _tipoCalculo ?? "";
+  getDataPagamento() => _dataPagamento ?? "";
+  getValorLiquido() => _valorLiquido ?? "";
 
   static ReciboPagamento fromJson(Map<String, dynamic> data) {
     ReciboPagamento response = ReciboPagamento();

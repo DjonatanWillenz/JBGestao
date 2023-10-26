@@ -14,9 +14,9 @@ class ReciboPagamentoProvider {
   }
 
   getBase64Recibo(int idrecibo) async {
-    int idempresa = AppSession.getInstancia().getEmpresa().getId();
+    int idpessoa = AppSession.getInstancia().getUsuario().getPessoa().getId();
     String urlRequest =
-        '/integracao/painel/recibo-pagamento/$idempresa/$idrecibo';
+        '/integracao/painel/recibo-pagamento/holerite/$idpessoa/$idrecibo';
     try {
       var request = await JBHttp.getInstancia().get(urlRequest);
       return request.statusCode == 200 ? request.data : null;
